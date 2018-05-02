@@ -1,0 +1,27 @@
+.section--top {
+  // background     : url("./../img/main/bg-texture.png") no-repeat center center;
+  background-image   : url("./../img/main/bg-texture.png");
+  background-repeat  : no-repeat;
+  background-position: 50%;
+  background-size    : cover;
+  position           : relative;
+}
+
+.section-top__container {
+  // outline        : 5px dashed green;
+  height         : 100%;
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+}
+
+.section-top__content {
+  display       : flex;
+  flex-wrap     : wrap;
+  flex-grow     : 1;
+  align-items   : center;
+  padding-bottom: 15%;
+  // outline: 5px dashed blue;
+  
+}
