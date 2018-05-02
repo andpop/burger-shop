@@ -1,0 +1,23 @@
+.wrapper {
+  height: 100%;
+  width : 100%;
+}
+
+.container {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  flex-direction : column;
+  // outline        : 1px solid red;
+  margin: 0 auto;
+  // padding-left   : 50px;
+  // padding-right  : 50px;
+  position: relative;
+  width   : 940px;
+}
+
+.maincontent {
+  height    : 100%;
+  min-height: 650px;
+}
+

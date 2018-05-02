@@ -1,0 +1,41 @@
+.features__list {
+  display: flex;
+}
+
+.features__item {
+  text-align  : center;
+  padding-left: 10px;
+}
+
+.features__icon {
+  margin-bottom: 20px;
+}
+
+.features__img {
+  display: inline-block;
+  // text-align: center;
+  // display: block;
+  // margin : 0 auto;
+}
+
+
+.features__title {
+  color      : $dark;
+  font-family: Lifehack;
+  font-size  : 24px;
+  font-weight: 500;
+  line-height: 28.14px;
+  /* Text style for "100% свеже" */
+  letter-spacing: -0.6px;
+  margin-bottom : 10px;
+}
+
+.features__description {
+  min-width  : 284px;
+  opacity    : 0.8;
+  color      : $dark;
+  font-family: Ubuntu;
+  font-size  : 14px;
+  font-weight: 300;
+  line-height: 24.02px;
+}
