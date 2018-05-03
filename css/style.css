@@ -7,21 +7,18 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
-*, *::before, *::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0; }
-
 html, body {
   height: 100%;
   width: 100%; }
 
 body {
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 1.42;
+  position: relative; }
 
-/* For footer fixing */
 .container {
   margin: 0 auto; }
 
@@ -34,9 +31,15 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0; }
+  ul li {
+    list-style: none; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
+  margin: 0; }
+
+p {
+  padding: 0;
   margin: 0; }
 
 .visuallyhidden {
@@ -52,6 +55,12 @@ h1, h2, h3, h4, h5, h6 {
   clip: rect(0 0 0 0);
   overflow: hidden; }
 
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
 @font-face {
   font-family: "Gora Free";
   src: url("../fonts/gora-free-webfont.woff2") format("woff2"), url("../fonts/gora-free-webfont.woff") format("woff");
@@ -62,10 +71,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Ubuntu';
   src: url("../fonts/ubuntu-b-webfont.woff2") format("woff2"), url("../fonts/ubuntu-b-webfont.woff") format("woff");
   font-weight: 700;
-  font-family: Gagalin;
-  font-size: 72px;
-  font-weight: 400;
-  line-height: 64.05px;
   font-style: normal; }
 
 @font-face {
@@ -99,22 +104,12 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal; }
 
 body {
-  background-color: #fff;
-  font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 1.42; }
+  color: #2f3234;
+  font-family: 'Ubuntu', Arial, Helvetica, sans-serif; }
 
-body, html {
-  height: 100%; }
-
-/* .content-center-aligned {
-  text-align: center;
-} */
-/* address {
-  font-style: normal;
-} */
 .wrapper {
   height: 100%;
+  min-width: 960px;
   width: 100%; }
 
 .container {
@@ -132,12 +127,17 @@ body, html {
   -ms-flex-direction: column;
   flex-direction: column;
   margin: 0 auto;
+  max-width: 940px;
   position: relative;
-  width: 940px; }
+  width: 95%; }
 
 .maincontent {
   height: 100%;
   min-height: 650px; }
+
+.footer {
+  position: relative;
+  width: 100%; }
 
 .section {
   background-color: rgba(0, 0, 0, 0.31);
