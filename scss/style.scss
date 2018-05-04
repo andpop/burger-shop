@@ -1,3 +1,4 @@
+@import './normalize.scss';
 // config settings
 @import './config/mixins.scss';
 @import './config/variables.scss';
@@ -12,13 +13,13 @@
 
 // settings for blocks
 @import './blocks/section/section.scss';
-@import './blocks/section/section-top/section-top.scss';
+@import './blocks/section/hero.scss';
+@import './blocks/nav/nav.scss';
 @import './blocks/btn/btn.scss';
-@import './blocks/section/section-about/section-about.scss';
+@import './blocks/section/about.scss';
 @import './blocks/section/section-comments/section-comments.scss';
 @import './blocks/header/header.scss';
 @import './blocks/logo/logo.scss';
-@import './blocks/menu/menu.scss';
 @import './blocks/order-link/order-link.scss';
 @import './blocks/slogan/slogan.scss';
 @import './blocks/arrow-scroll/arrow-scroll.scss';

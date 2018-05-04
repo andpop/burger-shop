@@ -1,18 +1,9 @@
-.section--about {
+.about {
   background-image   : url("./../img/about/about-bg.png");
   background-repeat  : no-repeat;
   background-position: center bottom;
   background-size    : cover;
   position           : relative;
-}
-
-.section-about__container {
-  // outline        : 1px solid brown;
-  height         : 100%;
-  display        : flex;
-  flex-direction : column;
-  justify-content: center;
-  align-items    : center;
 }
 
 

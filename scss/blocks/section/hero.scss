@@ -1,4 +1,4 @@
-.section--top {
+.hero {
   // background     : url("./../img/main/bg-texture.png") no-repeat center center;
   background-image   : url("./../img/main/bg-texture.png");
   background-repeat  : no-repeat;
@@ -7,16 +7,8 @@
   position           : relative;
 }
 
-.section-top__container {
-  // outline        : 5px dashed green;
-  height         : 100%;
-  display        : flex;
-  flex-direction : column;
-  justify-content: center;
-  align-items    : center;
-}
 
-.section-top__content {
+.hero__content {
   display       : flex;
   flex-wrap     : wrap;
   flex-grow     : 1;
