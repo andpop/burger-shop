@@ -452,6 +452,16 @@ body {
   min-width: 940px;
   position: relative; }
 
+.section__title {
+  font-family: Gagalin;
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 1.42;
+  margin-bottom: 1.25rem; }
+
+.section__title--hero {
+  color: #f9b43b; }
+
 .hero {
   background-image: url("./../img/main/bg-texture.png");
   background-repeat: no-repeat;
@@ -566,15 +576,6 @@ body {
   -ms-flex-preferred-size: 50%;
   flex-basis: 50%; }
 
-.slogan__title {
-  color: #f9b43b;
-  font-family: Gagalin;
-  font-size: 4.5rem;
-  font-weight: 400;
-  line-height: 1.42;
-  margin: 0;
-  padding-top: 100px; }
-
 .slogan__text {
   color: #ffffff;
   font-family: Lifehack;
@@ -615,7 +616,7 @@ body {
 .features__img {
   display: inline-block; }
 
-.features__title {
+.features__item h3 {
   color: #2f3234;
   font-family: Lifehack;
   font-size: 24px;
@@ -625,7 +626,7 @@ body {
   letter-spacing: -0.6px;
   margin-bottom: 10px; }
 
-.features__description {
+.features__item p {
   min-width: 284px;
   opacity: 0.8;
   color: #2f3234;
@@ -649,50 +650,7 @@ body {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%); }
 
-.comments__item--1 {
-  background-image: url("../img/comments/photo-1.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover; }
-
-.comments__item--2 {
-  background-image: url("../img/comments/photo-2.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover; }
-
-.comments__item--3 {
-  background-image: url("../img/comments/photo-3.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover; }
-
-.comments__item--4 {
-  background-image: url("../img/comments/photo-4.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover; }
-
-.comments__item--5 {
-  background-image: url("../img/comments/photo-5.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover; }
-
-.comments__item--6 {
-  background-image: url("../img/comments/photo-6.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover; }
-
-.comments__item--7 {
-  background-image: url("../img/comments/photo-7.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover; }
-
-.comments__item--8 {
-  background-image: url("../img/comments/photo-8.png");
+.comments__item {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover; }

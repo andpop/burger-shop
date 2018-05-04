@@ -7,3 +7,14 @@
   position        : relative;
 }
 
+.section__title {
+  font-family  : Gagalin;
+  font-size    : rem(72px);
+  font-weight  : 400;
+  line-height  : 1.42;
+  margin-bottom: rem(20px);
+}
+
+.section__title--hero {
+  color: $yellow;
+}
