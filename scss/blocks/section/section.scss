@@ -2,9 +2,9 @@
   background-color: rgba(0,0,0,0.31);
   display         : flex;
   height          : 100vh;
-  min-height      : 650px;
-  min-width       : 940px;
-  position        : relative;
+  // min-height      : 650px;
+  min-width: 940px;
+  position : relative;
 }
 
 .section__title {
@@ -15,6 +15,6 @@
   margin-bottom: rem(20px);
 }
 
-.section__title--hero {
+.section__title--hero, .section__title--team {
   color: $yellow;
 }

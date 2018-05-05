@@ -5,8 +5,6 @@
 
 .features__item {
   text-align: center;
-  // outline   : 1px solid red;
-  // padding-left: 10px;
 }
 
 .features__icon {
@@ -19,12 +17,11 @@
 
 
 .features__item h3 {
-  color      : $dark;
-  font-family: Lifehack;
-  font-size  : 24px;
-  font-weight: 500;
-  line-height: 28.14px;
-  /* Text style for "100% свеже" */
+  color         : $dark;
+  font-family   : Lifehack;
+  font-size     : 24px;
+  font-weight   : 500;
+  line-height   : 28.14px;
   letter-spacing: -0.6px;
   margin-bottom : 10px;
 }
