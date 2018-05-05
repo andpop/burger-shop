@@ -744,7 +744,11 @@ body {
   justify-content: center; }
 
 .team-acco__content {
-  display: none; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0;
+  overflow: hidden; }
 
 .team-acco__item {
   margin-bottom: 40px; }
@@ -757,9 +761,7 @@ body {
     transform: rotate(180deg); }
 
 .team-acco__item--active .team-acco__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
+  height: auto; }
 
 .team-acco__trigger {
   color: #fff;

@@ -19,7 +19,9 @@
 }
 
 .team-acco__content {
-  display: none;
+  display : flex;
+  height  : 0;
+  overflow: hidden;
 }
 
 .team-acco__item {
@@ -34,7 +36,7 @@
     }
   }
   .team-acco__content {
-    display: flex;
+    height: auto;
   }
 
 }
