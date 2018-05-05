@@ -455,7 +455,7 @@ body {
   line-height: 1.42;
   margin-bottom: 1.25rem; }
 
-.section__title--hero, .section__title--team {
+.section__title--hero, .section__title--team, .section__title--order {
   color: #f9b43b; }
 
 .hero {
@@ -809,5 +809,8 @@ body {
 
 .team-acco__text-content {
   font-weight: 300; }
+
+.order {
+  background: url("../img/order/order-bg.png") center center/cover no-repeat; }
 
 /*# sourceMappingURL=style.css.map */
