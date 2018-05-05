@@ -1,11 +1,11 @@
-.vertical-menu__item {
+.vertical-nav__item {
   width        : 16px;
   height       : 16px;
   position     : relative;
   margin-bottom: 10px;
 }
 
-.vertical-menu__link {
+.vertical-nav__link {
   &:after {
     display: inline-block;
     content: '';
