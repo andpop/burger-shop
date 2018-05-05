@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Заказ бургеров | MrBurger</title>
-  <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -16,43 +15,41 @@
   <div class="wrapper">
     <div class="maincontent">
 
-      <section class="section section--top">
-        <div class="container section-top__container">
+      <section class="section hero">
+        <div class="container">
           <header class="header">
-            <a href="" class="logo">
-              <img src="./img/main/logo.svg" alt="" class="logo__image">
+            <a href="#" class="logo">
+              <img src="./img/main/logo.svg" alt="MrBurger logo" class="logo__image">
             </a>
-            <div class="header__menu">
-              <ul class="menu">
-                <li class="menu__item">
-                  <a href="#" class="menu__link">О нас</a>
+            <nav class="nav header__menu">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="#" class="nav__link">О нас</a>
                 </li>
-                <li class="menu__item">
-                  <a href="#" class="menu__link">Бургеры</a>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">Бургеры</a>
                 </li>
-                <li class="menu__item">
-                  <a href="#" class="menu__link">Команда</a>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">Команда</a>
                 </li>
-                <li class="menu__item">
-                  <a href="#" class="menu__link">Меню</a>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">Меню</a>
                 </li>
-                <li class="menu__item">
-                  <a href="#" class="menu__link">Отзывы</a>
+                <li class="nav__item">
+                  <a href="#" class="nav__link">Отзывы</a>
                 </li>
               </ul>
-            </div>
-            <div class="btn-order header__btn">
-              <a href="#" class="btn order-link">Заказать</a>
-            </div>
+            </nav>
+            <a href="#" class="btn order-link">Заказать</a>
           </header>
   
-          <div class="section-top__content">
+          <div class="hero__content">
             <div class="slogan">
               <div class="slogan__big-burger">
-                <img src="./img/main/burger-drops.png" alt="" class="slogan__image">
+                <img src="./img/main/burger-drops.png" alt="Big burger image" class="slogan__image">
               </div>
               <div class="slogan__description">
-                <h2 class="slogan__title">Мы делаем</h2>
+                <h2 class="section__title section__title--hero">Мы делаем</h2>
                 <div class="slogan__text">натуральные бургеры</div>
               </div>
             </div>
@@ -63,8 +60,8 @@
         </a>
       </section>
 
-      <section class="section section--about">
-        <div class="container section-about__container">
+      <section class="section about">
+        <div class="container">
           <h2 class="section__title section__title--about">
             Мы лучшие
           </h2>
@@ -72,47 +69,48 @@
             <ul class="features__list">
               <li class="features__item">
                 <div class="features__icon">
-                  <!-- <img src="./img/about/meat.png" alt="" class="features__img"> -->
-                  <img src="./img/about/meat.svg" alt="" class="features__img">
+                  <img src="./img/about/meat.svg" alt="Meat icon" class="features__img">
                 </div>
-                <div class="features__title">
+                <!-- <h3 class="features__title"> -->
+                <h3>
                   100% свежее мясо
-                </div>
-                <div class="features__description">
-                    Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.
-                </div>
+                </h3>
+                <p>
+                  Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.
+                </p>
+                <!-- <div class="features__description">
+                </div> -->
               </li>
               <li class="features__item">
                 <div class="features__icon">
-                  <img src="./img/about/hand.svg" alt="" class="features__img">
+                  <img src="./img/about/hand.svg" alt="Hand icon" class="features__img">
                 </div>
-                <div class="features__title">
+                <h3>
                   Ручная сборка
-                </div>
-                <div class="features__description">
+                </h3>
+                <p>
                     Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Первое полустишие притягивает сюжетный реформаторский пафос.
-                </div>
+                </p>
               </li>
               <li class="features__item">
                 <div class="features__icon">
-                  <img src="./img/about/natural.svg" alt="" class="features__img">
+                  <img src="./img/about/natural.svg" alt="Natural icon" class="features__img">
                 </div>
-                <div class="features__title">
+                <h3>
                   Натуральные ингредиенты
-                </div>
-                <div class="features__description">
+                </h3>
+                <p>
                     Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. 
-                </div>
+                </p>
               </li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section class="secton section--comments">
+      <section class="secton comments">
         <ul class="comments__list">
-          <!-- <li class="comments__item comments__item--1"> -->
-          <li class="comments__item comments__item--1">
+          <li class="comments__item" style="background-image: url('./img/comments/photo-1.png')">
             <div class="comments__brief">
               <h3 class="comments__name">Константин Спилберг</h3>
               <p class="comments__text">
@@ -121,81 +119,76 @@
               </p>
               <a href="#" class="comments__btn btn">Подробнее</a>
             </div>
-            <!-- <img src="./img/comments/photo-1.png" alt="Фото первого человека" class="comments__photo"> -->
           </li>
-          <li class="comments__item comments__item--2">
-              <div class="comments__brief">
-                  <h3 class="comments__name">Константин Спилберг</h3>
-                  <p class="comments__text">
-                      Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... 
-                      Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
-                  </p>
-                  <a href="#" class="comments__btn btn">Подробнее</a>
-                </div>
-    
-            <!-- <img src="./img/comments/photo-2.png" alt="Фото второго человека" class="comments__photo"> -->
+          <li class="comments__item" style="background-image: url('./img/comments/photo-2.png')">
+            <div class="comments__brief">
+                <h3 class="comments__name">Константин Спилберг</h3>
+                <p class="comments__text">
+                    Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... 
+                    Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
+                </p>
+                <a href="#" class="comments__btn btn">Подробнее</a>
+              </div>
           </li>
-          <li class="comments__item comments__item--3">
-              <div class="comments__brief">
-                  <h3 class="comments__name">Константин Спилберг</h3>
-                  <p class="comments__text">
-                      Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... 
-                      Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
-                  </p>
-                  <a href="#" class="comments__btn btn">Подробнее</a>
-                </div>
-            <!-- <img src="./img/comments/photo-3.png" alt="Фото третьего человека" class="comments__photo"> -->
+          <li class="comments__item" style="background-image: url('./img/comments/photo-3.png')">
+            <div class="comments__brief">
+              <h3 class="comments__name">Константин Спилберг</h3>
+              <p class="comments__text">
+                Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... 
+                Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
+              </p>
+              <a href="#" class="comments__btn btn">Подробнее</a>
+            </div>
           </li>
-          <li class="comments__item comments__item--4">
-              <div class="comments__brief">
-                  <h3 class="comments__name">Константин Спилберг</h3>
-                  <p class="comments__text">
-                      Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... 
-                      Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
-                  </p>
-                  <a href="#" class="comments__btn btn">Подробнее</a>
-                </div>
-            <!-- <img src="./img/comments/photo-4.png" alt="Фото четвертого человека" class="comments__photo"> -->
+          <li class="comments__item" style="background-image: url('./img/comments/photo-4.png')">
+            <div class="comments__brief">
+              <h3 class="comments__name">Константин Спилберг</h3>
+              <p class="comments__text">
+                Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... 
+                Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
+              </p>
+              <a href="#" class="comments__btn btn">Подробнее</a>
+            </div>
           </li>
-          <li class="comments__item comments__item--5">
-              <div class="comments__brief">
-                  <h3 class="comments__name">Константин Спилберг</h3>
-                  <p class="comments__text">
-                      Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... 
-                      Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
-                  </p>
-                  <a href="#" class="comments__btn btn">Подробнее</a>
-            <!-- <img src="./img/comments/photo-5.png" alt="Фото пятого человека" class="comments__photo"> -->
+          <li class="comments__item" style="background-image: url('./img/comments/photo-5.png')">
+            <div class="comments__brief">
+              <h3 class="comments__name">Константин Спилберг</h3>
+              <p class="comments__text">
+                Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... 
+                Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
+              </p>
+              <a href="#" class="comments__btn btn">Подробнее</a>
+            </div>
           </li>
-          <li class="comments__item comments__item--6">
-              <div class="comments__brief">
-                  <h3 class="comments__name">Константин Спилберг</h3>
-                  <p class="comments__text">
-                      Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... 
-                      Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
-                  </p>
-                  <a href="#" class="comments__btn btn">Подробнее</a>
-            <!-- <img src="./img/comments/photo-6.png" alt="Фото шестого человека" class="comments__photo"> -->
+          <li class="comments__item" style="background-image: url('./img/comments/photo-6.png')">
+            <div class="comments__brief">
+              <h3 class="comments__name">Константин Спилберг</h3>
+              <p class="comments__text">
+                Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... 
+                Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
+              </p>
+              <a href="#" class="comments__btn btn">Подробнее</a>
+            </div>
           </li>
-          <li class="comments__item comments__item--7">
-              <div class="comments__brief">
-                  <h3 class="comments__name">Константин Спилберг</h3>
-                  <p class="comments__text">
-                      Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... 
-                      Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
-                  </p>
-                  <a href="#" class="comments__btn btn">Подробнее</a>
-            <!-- <img src="./img/comments/photo-7.png" alt="Фото седьмого человека" class="comments__photo"> -->
+          <li class="comments__item" style="background-image: url('./img/comments/photo-7.png')">
+            <div class="comments__brief">
+              <h3 class="comments__name">Константин Спилберг</h3>
+              <p class="comments__text">
+                Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... 
+                Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
+              </p>
+              <a href="#" class="comments__btn btn">Подробнее</a>
+            </div>
           </li>
-          <li class="comments__item comments__item--8">
-              <div class="comments__brief">
-                  <h3 class="comments__name">Константин Спилберг</h3>
-                  <p class="comments__text">
-                      Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... 
-                      Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
-                  </p>
-                  <a href="#" class="comments__btn btn">Подробнее</a>
-            <!-- <img src="./img/comments/photo-8.png" alt="Фото восьмого человека" class="comments__photo"> -->
+          <li class="comments__item" style="background-image: url('./img/comments/photo-8.png')">
+            <div class="comments__brief">
+              <h3 class="comments__name">Константин Спилберг</h3>
+              <p class="comments__text">
+                Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... 
+                Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
+              </p>
+              <a href="#" class="comments__btn btn">Подробнее</a>
+            </div>
           </li>
         </ul>
       </section>
@@ -203,32 +196,33 @@
     </div>
     
   </div>
-
+  
+  
   <div class="nav-sidebar">
-    <ul class="vertical-menu">
-      <li class="vertical-menu__item">
-        <a href="#" class="vertical-menu__link"> </a>
+    <ul class="vertical-nav">
+      <li class="vertical-nav__item">
+        <a href="#" class="vertical-nav__link"> </a>
       </li>
-      <li class="vertical-menu__item">
-        <a href="#" class="vertical-menu__link"> </a>
+      <li class="vertical-nav__item">
+        <a href="#" class="vertical-nav__link"> </a>
       </li>
-      <li class="vertical-menu__item">
-        <a href="#" class="vertical-menu__link"> </a>
+      <li class="vertical-nav__item">
+        <a href="#" class="vertical-nav__link"> </a>
       </li>
-      <li class="vertical-menu__item">
-        <a href="#" class="vertical-menu__link"> </a>
+      <li class="vertical-nav__item">
+        <a href="#" class="vertical-nav__link"> </a>
       </li>
-      <li class="vertical-menu__item">
-        <a href="#" class="vertical-menu__link"> </a>
+      <li class="vertical-nav__item">
+        <a href="#" class="vertical-nav__link"> </a>
       </li>
-      <li class="vertical-menu__item">
-        <a href="#" class="vertical-menu__link"> </a>
+      <li class="vertical-nav__item">
+        <a href="#" class="vertical-nav__link"> </a>
       </li>
-      <li class="vertical-menu__item">
-        <a href="#" class="vertical-menu__link"> </a>
+      <li class="vertical-nav__item">
+        <a href="#" class="vertical-nav__link"> </a>
       </li>
-      <li class="vertical-menu__item">
-        <a href="#" class="vertical-menu__link"> </a>
+      <li class="vertical-nav__item">
+        <a href="#" class="vertical-nav__link"> </a>
       </li>
     </ul>
   </div>

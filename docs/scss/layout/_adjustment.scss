@@ -1,6 +1,22 @@
+body {
+  color      : $dark;
+  font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+}
+
+// .wrapper {
+//   height   : 100%;
+//   min-width: 940px+20px;
+//   // min-height: 100%;
+//   // overflow: hidden;
+//   width: 100%;
+// }
+
 .wrapper {
-  height: 100%;
-  width : 100%;
+  position  : relative;
+  width     : 100%;
+  min-width : 940px + 20px;
+  min-height: 100%;
+  overflow  : hidden;
 }
 
 .container {
@@ -9,15 +25,18 @@
   align-items    : center;
   flex-direction : column;
   // outline        : 1px solid red;
-  margin: 0 auto;
-  // padding-left   : 50px;
-  // padding-right  : 50px;
+  margin   : 0 auto;
+  max-width: 940px;
+  position : relative;
+  width    : 95%;
+}
+
+// .maincontent {
+//   height    : 100%;
+//   min-height: 650px;
+// }
+
+.footer {
   position: relative;
-  width   : 940px;
+  width   : 100%;
 }
-
-.maincontent {
-  height    : 100%;
-  min-height: 650px;
-}
-

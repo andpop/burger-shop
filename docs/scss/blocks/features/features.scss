@@ -1,10 +1,12 @@
 .features__list {
-  display: flex;
+  display        : flex;
+  justify-content: space-between;
 }
 
 .features__item {
-  text-align  : center;
-  padding-left: 10px;
+  text-align: center;
+  // outline   : 1px solid red;
+  // padding-left: 10px;
 }
 
 .features__icon {
@@ -13,13 +15,10 @@
 
 .features__img {
   display: inline-block;
-  // text-align: center;
-  // display: block;
-  // margin : 0 auto;
 }
 
 
-.features__title {
+.features__item h3 {
   color      : $dark;
   font-family: Lifehack;
   font-size  : 24px;
@@ -30,7 +29,7 @@
   margin-bottom : 10px;
 }
 
-.features__description {
+.features__item p {
   min-width  : 284px;
   opacity    : 0.8;
   color      : $dark;
@@ -39,3 +38,13 @@
   font-weight: 300;
   line-height: 24.02px;
 }
+
+// .features__description {
+//   min-width  : 284px;
+//   opacity    : 0.8;
+//   color      : $dark;
+//   font-family: Ubuntu;
+//   font-size  : 14px;
+//   font-weight: 300;
+//   line-height: 24.02px;
+// }

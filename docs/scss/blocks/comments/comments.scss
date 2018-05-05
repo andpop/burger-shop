@@ -6,27 +6,27 @@
 
 .comments__item {
   display: block;
-  // width  : 275px;
-  // height : 325px;
-  width : 25%;
-  height: 50vh;
-  filter: grayscale(100%);
+  width  : 25%;
+  height : 50vh;
+  filter : grayscale(100%);
 }
 
-.comments__photo {
-  // filter: grayscale(100%);
-}
 
-@for $i from 1 through 8 {
-  .comments__item--#{$i} {
-  background-image: url("../img/comments/photo-#{$i}.png");
-  // background-clip  : padding-box;
+.comments__item {
   background-repeat  : no-repeat;
   background-position: center center;
   background-size    : cover;
-    
-  }
 }
+
+
+// @for $i from 1 through 8 {
+//   .comments__item--#{$i} {
+//   background-image   : url("../img/comments/photo-#{$i}.png");
+//   background-repeat  : no-repeat;
+//   background-position: center center;
+//   background-size    : cover;
+//   }
+// }
 
 .comments__brief {
   height : 100%;
