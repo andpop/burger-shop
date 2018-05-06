@@ -241,45 +241,7 @@
               <a href="#" class="comments__btn btn">Подробнее</a>
             </div>
           </li>
-          <li class="comments__item" st          <form action="" class="form">
-              <div class="form__row">
-                <label class="form__block">
-                  <div class="form__title">Имя</div>
-                  <input type="text" class="form__input">
-                </label>
-                <label class="form__block">
-                  <div class="form__title">Телефон</div>
-                  <input type="text" class="form__input">
-                </label>
-              </div>
-              <div class="form__row">
-                <label class="form__block">
-                  <div class="form__title">Улица</div>
-                  <input type="text" class="form__input">
-                </label>
-              </div>
-              <div class="form__row">
-                <label class="form__block">
-                  <div class="form__title">Дом</div>
-                  <input type="text" class="form__input">
-                </label>
-                <label class="form__block">
-                  <div class="form__title">Корпус</div>
-                  <input type="text" class="form__input">
-                </label>
-                <label class="form__block">
-                  <div class="form__title">Квартира</div>
-                  <input type="text" class="form__input">
-                </label>
-                <label class="form__block">
-                  <div class="form__title">Этаж</div>
-                  <input type="text" class="form__input">
-                </label>
-    
-              </div>
-    
-            </form>
-  yle="background-image: url('./img/comments/photo-6.png')">
+          <li class="comments__item" style="background-image: url('./img/comments/photo-6.png')">
             <div class="comments__brief">
               <h3 class="comments__name">Константин Спилберг</h3>
               <p class="comments__text">
@@ -319,44 +281,120 @@
           </h2>
   
           <form action="" class="form">
-            <div class="form__row">
-              <label class="form__block">
-                <div class="form__title">Имя</div>
-                <input type="text" class="form__input">
-              </label>
-              <label class="form__block">
-                <div class="form__title">Телефон</div>
-                <input type="text" class="form__input">
-              </label>
-            </div>
-            <div class="form__row">
-              <label class="form__block">
-                <div class="form__title">Улица</div>
-                <input type="text" class="form__input">
-              </label>
-            </div>
-            <div class="form__row">
-              <label class="form__block">
-                <div class="form__title">Дом</div>
-                <input type="text" class="form__input">
-              </label>
-              <label class="form__block">
-                <div class="form__title">Корпус</div>
-                <input type="text" class="form__input">
-              </label>
-              <label class="form__block">
-                <div class="form__title">Квартира</div>
-                <input type="text" class="form__input">
-              </label>
-              <label class="form__block">
-                <div class="form__title">Этаж</div>
-                <input type="text" class="form__input">
-              </label>
+            <div class="form__column">
+              <div class="form__row">
+                <label class="form__block">
+                  <div class="form__title">Имя</div>
+                  <input type="text" class="form__input">
+                </label>
+                <label class="form__block">
+                  <div class="form__title">Телефон</div>
+                  <input type="text" class="form__input">
+                </label>
+              </div>
+              <div class="form__row">
+                <label class="form__block">
+                  <div class="form__title">Улица</div>
+                  <input type="text" class="form__input">
+                </label>
+              </div>
+              <div class="form__row">
+                <label class="form__block">
+                  <div class="form__title">Дом</div>
+                  <input type="text" class="form__input">
+                </label>
+                <label class="form__block">
+                  <div class="form__title">Корпус</div>
+                  <input type="text" class="form__input">
+                </label>
+                <label class="form__block">
+                  <div class="form__title">Квартира</div>
+                  <input type="text" class="form__input">
+                </label>
+                <label class="form__block">
+                  <div class="form__title">Этаж</div>
+                  <input type="text" class="form__input">
+                </label>
+              </div>
+            </div>  
+            <div class="form__column">
+              <div class="form__row">
+                <label class="form__block">
+                  <div class="form__title">Комментарий</div>
+                  <textarea id="" cols="30" rows="10" class="form__input form__textarea">               
+                  </textarea>
+                </label>
+              </div>
+              
+              <div class="form__row">
+                <div class="form__block">
+                  <input type="radio" name="payment" id="cashback" class="form__input-payment">
+                  <label class="form__label-payment form__title" for="cashback">
+                    Потребуется сдача
+                  </label>
+                  <input type="radio" name="payment" id="card" class="form__input-payment">
+                  <label class="form__label-payment form__title" for="card">
+                    Оплата по карте
+                  </label>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__block">
+                  <input type="checkbox" class="form__input-callback" name="callback" id="callback">
+                  <label class="form__label-call form__title" for="callback">
+                    Не перезванивать
+                  </label>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__block">
+                  <button type="submit" class="btn order-link form__submit">Заказать</button>
+                  <button type="reset" class="form__title form__reset">Очистить</button>
+                </div>
+              </div>
             </div>
           </form>
         </div>
       </section>
 
+      <section class="section contacts">
+        <footer class="footer">
+          <div class="container">
+            <div class="footer__content">
+              <div class="footer__contacts">
+                <div class="footer__address">
+                  Санкт-Петербург, ул.Бабушкина, д.12/1, 15
+                </div>
+                <a href="tel:+78123771377" class="footer__phone">+7 (812) 377-13-77</a>
+              </div>
+              <div class="footer__socials">
+                <ul class="socials">
+                  <li class="socials__item">
+                    <a href="#" class="socials__item">
+                      <img src="../img/footer/vk.svg" alt="" class="socials__icon">
+                    </a>
+                  </li>
+                  <li class="socials__item">
+                    <a href="#" class="socials__item">
+                      <img src="../img/footer/fb.svg" alt="" class="socials__icon">
+                    </a>
+                  </li>
+                  <li class="socials__item">
+                    <a href="#" class="socials__item">
+                      <img src="../img/footer/inst.svg" alt="" class="socials__icon">
+                    </a>
+                  </li>
+                  <li class="socials__item">
+                    <a href="#" class="socials__item">
+                      <img src="../img/footer/twitter.svg" alt="" class="socials__icon">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            </div>
+        </footer>
+      </section>
     </div>
     
   </div>

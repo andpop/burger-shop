@@ -1,0 +1,19 @@
+.socials {
+  display        : flex;
+  justify-content: flex-end;
+  align-items    : center;
+  width          : 100%;
+}
+
+.socials__item {
+  width         : 20px;
+  height        : 20px;
+  display       : inline-block;
+  vertical-align: middle;
+  margin-left   : 16px;
+}
+
+.socials__link {
+  opacity   : .5;
+  transition: all 0.5s;
+}
