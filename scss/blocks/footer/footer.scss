@@ -27,6 +27,14 @@
   color          : $orange;
   font-weight    : 700;
   text-decoration: none;
+  &:before {
+    content     : '';
+    display     : inline-block;
+    width       : 12px;
+    height      : 11px;
+    background  : url('../img/footer/phone.png');
+    margin-right: 10px;
+  }
 }
 
 .footer__socials {

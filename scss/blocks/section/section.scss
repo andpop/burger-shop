@@ -18,3 +18,10 @@
 .section__title--hero, .section__title--team, .section__title--order {
   color: $yellow;
 }
+
+.section__title--menu {
+  color   : #fff;
+  position: absolute;
+  top     : 10%;
+  left    : 10%;
+}
