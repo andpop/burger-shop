@@ -11,9 +11,14 @@
   display       : inline-block;
   vertical-align: middle;
   margin-left   : 16px;
+  opacity       : 0.5;
+  transition    : all 0.5s;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .socials__link {
-  opacity   : .5;
-  transition: all 0.5s;
+  // opacity   : .5;
+  
 }
