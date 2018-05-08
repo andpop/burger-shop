@@ -2,8 +2,8 @@
   background-color: rgba(0,0,0,0.31);
   display         : flex;
   height          : 100vh;
-  // min-height      : 650px;
-  min-width: 940px;
+  // min-height      : rem(650px);
+  min-width: rem(940px);
   position : relative;
 }
 
