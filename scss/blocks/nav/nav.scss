@@ -1,0 +1,37 @@
+.nav {
+  margin-right: 11px;
+  // outline     : 1px solid yellow;
+}
+
+.nav__item {
+  display       : inline-block;
+  vertical-align: middle;
+  white-space   : nowrap;
+  &:after {
+    display       : inline-block;
+    vertical-align: middle;
+    content       : '';
+    @include circle(5px, #fff);
+    margin: 0 23px;
+  }
+  &:last-child:after {
+    display: none;
+    // font-size: 13px;
+  }
+  // font-size: 0;
+}
+
+.nav__link {
+  display: inline-block;
+  color  : #ffffff;
+  // font-family    : Ubuntu;
+  font-size  : 13px;
+  font-weight: 500;
+  // line-height    : 30px;
+  text-transform : uppercase;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+

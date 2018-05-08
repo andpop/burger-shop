@@ -1,0 +1,27 @@
+.vertical-nav__item {
+  width        : 16px;
+  height       : 16px;
+  position     : relative;
+  margin-bottom: 10px;
+}
+
+.vertical-nav__link {
+  &:after {
+    display: inline-block;
+    content: '';
+    @include circle(5px, #fff); 
+    @extend %center-block;
+  }
+  &:before {
+    content: '';
+    display: inline-block;
+    opacity: 0;
+    @include round(16px, #fff); 
+    @extend %center-block;
+  }
+
+  &:hover:before  {
+    opacity: 1;
+  }
+  
+}

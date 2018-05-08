@@ -1,0 +1,20 @@
+.section {
+  background-color: rgba(0,0,0,0.31);
+  display         : flex;
+  height          : 100vh;
+  min-height      : 650px;
+  min-width       : 940px;
+  position        : relative;
+}
+
+.section__title {
+  font-family  : Gagalin;
+  font-size    : rem(72px);
+  font-weight  : 400;
+  line-height  : 1.42;
+  margin-bottom: rem(20px);
+}
+
+.section__title--hero {
+  color: $yellow;
+}

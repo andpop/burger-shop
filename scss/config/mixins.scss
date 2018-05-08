@@ -1,0 +1,26 @@
+@mixin circle($width, $color) {
+  width           : $width;
+  height          : $width;
+  border-radius   : $width/2;
+  background-color: $color;
+}
+
+@mixin round($width, $color) {
+  border       : 1px solid $color;
+  width        : $width;
+  height       : $width;
+  border-radius: $width/2;
+}
+
+%center-block {
+  position : absolute;
+  top      : 50%;
+  left     : 50%;
+  transform: translate(-50%, -50%);
+}
+
+// for responsive
+@function rem($px) {
+  @return $px / 16px+0rem;
+}
+

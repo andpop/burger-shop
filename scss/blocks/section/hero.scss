@@ -1,0 +1,19 @@
+.hero {
+  // background     : url("./../img/main/bg-texture.png") no-repeat center center;
+  background-image   : url("./../img/main/bg-texture.png");
+  background-repeat  : no-repeat;
+  background-position: 50%;
+  background-size    : cover;
+  position           : relative;
+}
+
+
+.hero__content {
+  display       : flex;
+  flex-wrap     : wrap;
+  flex-grow     : 1;
+  align-items   : center;
+  padding-bottom: 15%;
+  // outline: 5px dashed blue;
+  
+}

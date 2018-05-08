@@ -1,0 +1,50 @@
+.features__list {
+  display        : flex;
+  justify-content: space-between;
+}
+
+.features__item {
+  text-align: center;
+  // outline   : 1px solid red;
+  // padding-left: 10px;
+}
+
+.features__icon {
+  margin-bottom: 20px;
+}
+
+.features__img {
+  display: inline-block;
+}
+
+
+.features__item h3 {
+  color      : $dark;
+  font-family: Lifehack;
+  font-size  : 24px;
+  font-weight: 500;
+  line-height: 28.14px;
+  /* Text style for "100% свеже" */
+  letter-spacing: -0.6px;
+  margin-bottom : 10px;
+}
+
+.features__item p {
+  min-width  : 284px;
+  opacity    : 0.8;
+  color      : $dark;
+  font-family: Ubuntu;
+  font-size  : 14px;
+  font-weight: 300;
+  line-height: 24.02px;
+}
+
+// .features__description {
+//   min-width  : 284px;
+//   opacity    : 0.8;
+//   color      : $dark;
+//   font-family: Ubuntu;
+//   font-size  : 14px;
+//   font-weight: 300;
+//   line-height: 24.02px;
+// }

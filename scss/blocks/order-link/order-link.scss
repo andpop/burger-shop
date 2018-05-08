@@ -1,0 +1,6 @@
+.order-link {
+  background-color: $orange;
+  &:hover {
+    background-color: darken($orange, 7%);
+  }
+}

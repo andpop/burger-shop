@@ -1,0 +1,19 @@
+.about {
+  background-image   : url("./../img/about/about-bg.png");
+  background-repeat  : no-repeat;
+  background-position: center bottom;
+  background-size    : cover;
+  position           : relative;
+}
+
+
+.section__title--about {
+  color        : $dark;
+  font-family  : Gagalin;
+  font-size    : 72px;
+  font-weight  : 400;
+  line-height  : 64.05px;
+  text-align   : center;
+  margin-bottom: 54px;
+  // padding-top: 130px;
+}

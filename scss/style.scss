@@ -1,0 +1,29 @@
+@import './normalize.scss';
+// config settings
+@import './config/mixins.scss';
+@import './config/variables.scss';
+
+
+// layout settings 
+@import './layout/_base.scss';
+@import './layout/_fonts.scss';
+
+// common settings for project 
+@import './layout/_adjustment.scss';
+
+// settings for blocks
+@import './blocks/section/section.scss';
+@import './blocks/section/hero.scss';
+@import './blocks/nav/nav.scss';
+@import './blocks/btn/btn.scss';
+@import './blocks/section/about.scss';
+@import './blocks/section/comments.scss';
+@import './blocks/header/header.scss';
+@import './blocks/logo/logo.scss';
+@import './blocks/order-link/order-link.scss';
+@import './blocks/slogan/slogan.scss';
+@import './blocks/arrow-scroll/arrow-scroll.scss';
+@import './blocks/features/features.scss';
+@import './blocks/comments/comments.scss';
+@import './blocks/nav-sidebar/nav-sidebar.scss';
+@import './blocks/vertical-nav/vertical-nav.scss';

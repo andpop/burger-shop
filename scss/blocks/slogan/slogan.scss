@@ -1,0 +1,24 @@
+.slogan {
+  display     : flex;
+  padding-left: 17px;
+}
+
+.slogan__big-burger, .slogan__text {
+  display   : flex;
+  flex-basis: 50%;
+}
+
+.slogan__text {
+  color         : #ffffff;
+  font-family   : Lifehack;
+  font-size     : rem(65px);
+  font-weight   : 500;
+  letter-spacing: -1.63px;
+  line-height   : 1;
+}
+
+.slogan__description {
+  flex-direction : column;
+  justify-content: center;
+  padding-left   : 10px;
+}
