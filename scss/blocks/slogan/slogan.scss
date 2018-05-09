@@ -1,7 +1,13 @@
 .slogan {
   display     : flex;
   padding-left: rem(17px);
+  
+  @include tablets {
+    flex-direction: column;
+  }
 }
+
+
 
 .slogan__image {
   max-width: 95%;

@@ -4,6 +4,7 @@
   height          : 100vh;
   // min-height      : rem(650px);
   min-width: rem(940px);
+  width    : 100%;
   position : relative;
 }
 
@@ -17,6 +18,16 @@
 
 .section__title--hero, .section__title--team, .section__title--order {
   color: $yellow;
+}
+
+.section__title--hero {
+	@include phones {
+		font-size: 63px;
+	}
+
+	@include phones--small {
+		font-size: 30px;
+	}  
 }
 
 .section__title--menu {

@@ -12,6 +12,9 @@
     content       : '';
     @include circle(5px, #fff);
     margin: 0 rem(23px);
+    // @include tablets--big {
+    //   margin: 0 5px;
+    // }
   }
   &:last-child:after {
     display: none;
@@ -24,9 +27,8 @@
   display: inline-block;
   color  : #ffffff;
   // font-family    : Ubuntu;
-  font-size  : rem(13px);
-  font-weight: 500;
-  // line-height    : rem(30px);
+  font-size      : rem(13px);
+  font-weight    : 500;
   text-transform : uppercase;
   text-decoration: none;
   &:hover {

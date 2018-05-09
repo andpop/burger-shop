@@ -17,32 +17,82 @@
 
       <section class="section hero">
         <div class="container">
-          <header class="header">
+
+          <!-- <header class="header">
             <a href="#" class="logo">
               <img src="./img/main/logo.svg" alt="MrBurger logo" class="logo__image">
             </a>
-            <nav class="nav header__menu">
-              <ul class="nav__list">
-                <li class="nav__item">
-                  <a href="#" class="nav__link">О нас</a>
-                </li>
-                <li class="nav__item">
-                  <a href="#" class="nav__link">Бургеры</a>
-                </li>
-                <li class="nav__item">
-                  <a href="#" class="nav__link">Команда</a>
-                </li>
-                <li class="nav__item">
-                  <a href="#" class="nav__link">Меню</a>
-                </li>
-                <li class="nav__item">
-                  <a href="#" class="nav__link">Отзывы</a>
-                </li>
-              </ul>
-            </nav>
-            <a href="#" class="btn order-link">Заказать</a>
-          </header>
+            <div class="header__menu">
+              <nav class="nav">
+                <ul class="nav__list">
+                  <li class="nav__item">
+                    <a href="#" class="nav__link">О нас</a>
+                  </li>we
+                  <li class="nav__item">
+                    <a href="#" class="nav__link">Бургеры</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="#" class="nav__link">Команда</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="#" class="nav__link">Меню</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="#" class="nav__link">Отзывы</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="header__links">
+              <a href="#" class="btn order-link">Заказать</a>
+              <a class="hamburger-menu-link" href="">
+                <div class="hamburger-menu-link__bars"></div>
+              </a>
+            </div>
+          </header> -->
   
+          <header class="header">
+              <div class="header__logo">
+                <a class="logo" href="#">
+                  <img class="logo__image" src="./img/main/logo.svg">
+                </a>
+              </div>
+              <div class="header__btns">
+                <div class="header__menu">
+                  <nav class="nav">
+                    <ul class="nav__list">
+                      <li class="nav__item">
+                        <a class="nav__link" href="" data-scroll-to="1">о нас</a>
+                      </li>
+                      <li class="nav__item">
+                        <a class="nav__link" href="" data-scroll-to="2">бургеры</a>
+                      </li>
+                      <li class="nav__item">
+                        <a class="nav__link" href="" data-scroll-to="3">команда</a>
+                      </li>
+                      <li class="nav__item">
+                        <a class="nav__link" href="" data-scroll-to="4">меню</a>
+                      </li>
+                      <li class="nav__item">
+                        <a class="nav__link" href="" data-scroll-to="5">отзывы</a>
+                      </li>
+                      <li class="nav__item">
+                        <a class="nav__link" href="" data-scroll-to="7">контакты</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="header__links">
+                  <a class="order-link btn" href="" data-scroll-to="6">Заказать</a>
+                  <a class="hamburger-menu-link" href="">
+                    <div class="hamburger-menu-link__bars"></div>
+                  </a>
+                </div>
+              </div>
+  
+            </header>
+  
+
           <div class="hero__content">
             <div class="slogan">
               <div class="slogan__big-burger">
@@ -115,7 +165,7 @@
               Команда
             </h2>
           </div>
-          <ul class="team-acco">
+          <ul class="team-acco">@include tablets() {
             <li class="team-acco__item">
               <a href="#" class="team-acco__trigger">Дэниэл Редклиф</a>
               <div class="team-acco__content">
