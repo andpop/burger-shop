@@ -36,6 +36,10 @@
   height : 100%;
   padding: rem(50px) rem(30px) rem(30px) rem(20px);
   opacity: 0;
+  @include tablets {
+    padding: 3%;
+  }
+
   &:hover {
     background-color: rgba(20, 20, 20, 0.7);
     transition      : 0.5s;

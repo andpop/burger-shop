@@ -830,6 +830,9 @@ body {
   height: 100%;
   padding: 3.125rem 1.875rem 1.875rem 1.25rem;
   opacity: 0; }
+  @media screen and (max-width: 768px) {
+    .comments__brief {
+      padding: 3%; } }
   .comments__brief:hover {
     background-color: rgba(20, 20, 20, 0.7);
     -webkit-transition: 0.5s;
