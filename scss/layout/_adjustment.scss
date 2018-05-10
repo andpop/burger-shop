@@ -25,9 +25,9 @@ body {
   justify-content: center;
   align-items    : center;
   flex-direction : column;
-  outline        : 1px solid red;
-  margin         : 0 auto;
-  max-width      : rem(940px);
+  // outline        : 1px solid red;
+  margin   : 0 auto;
+  max-width: rem(940px);
   @include tablets {
     max-width: rem(700px);
   }

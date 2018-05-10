@@ -1,5 +1,9 @@
 .form {
   display: flex;
+  @include tablets {
+    flex-direction: column;
+    width         : 70%;
+  }
 }
 
 .form__column {
@@ -19,6 +23,9 @@
   border-radius: 5px;
   padding      : rem(8px) rem(20px);
   width        : 100%;
+  &:focus {
+    border: 1px solid $orange;
+  }
 }
 
 .form__row {

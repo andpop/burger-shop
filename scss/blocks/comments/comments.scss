@@ -9,6 +9,10 @@
   width  : 25%;
   height : 50vh;
   filter : grayscale(100%);
+  @include tablets {
+    width : 50%;
+    height: 25vh;
+  }
 }
 
 

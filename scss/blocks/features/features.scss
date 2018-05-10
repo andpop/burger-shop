@@ -34,6 +34,10 @@
   font-size  : rem(14px);
   font-weight: 300;
   line-height: 24px;
+  @include tablets {
+    min-width: rem(217px);
+  }
+
 }
 
 // .features__description {

@@ -440,7 +440,6 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  outline: 1px solid red;
   margin: 0 auto;
   max-width: 58.75rem;
   position: relative;
@@ -465,6 +464,9 @@ body {
   font-weight: 400;
   line-height: 1.42;
   margin-bottom: 1.25rem; }
+  @media screen and (max-width: 768px) {
+    .section__title {
+      text-align: center; } }
 
 .section__title--hero, .section__title--team, .section__title--order {
   color: #f9b43b; }
@@ -482,6 +484,10 @@ body {
   position: absolute;
   top: 10%;
   left: 10%; }
+  @media screen and (max-width: 768px) {
+    .section__title--menu {
+      top: 5%;
+      left: 5%; } }
 
 .hero {
   background-image: url("./../img/main/bg-texture.png");
@@ -489,6 +495,9 @@ body {
   background-position: 50%;
   background-size: cover;
   position: relative; }
+  @media screen and (max-width: 768px) {
+    .hero {
+      background-image: url("./../img/main/bg-texture-768.png"); } }
 
 .hero__content {
   display: -webkit-box;
@@ -635,6 +644,9 @@ body {
   background-position: center bottom;
   background-size: cover;
   position: relative; }
+  @media screen and (max-width: 768px) {
+    .about {
+      background-image: url("./../img/about/about-bg-768.png"); } }
 
 .section__title--about {
   color: #2f3234;
@@ -664,8 +676,7 @@ body {
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
-  outline: 1px solid white; }
+  align-items: center; }
 
 .header__links {
   display: -webkit-box;
@@ -685,8 +696,7 @@ body {
       display: none; } }
 
 .logo__image {
-  max-width: 95%;
-  outline: 1px solid yellow; }
+  max-width: 95%; }
 
 .logo {
   display: inline-block;
@@ -708,7 +718,11 @@ body {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
-      flex-direction: column; } }
+      flex-direction: column;
+      padding-left: 0;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; } }
 
 .slogan__image {
   max-width: 95%; }
@@ -727,6 +741,9 @@ body {
   font-weight: 500;
   letter-spacing: -1.63px;
   line-height: 1; }
+  @media screen and (max-width: 768px) {
+    .slogan__text {
+      text-align: center; } }
 
 .slogan__description {
   -webkit-box-orient: vertical;
@@ -737,6 +754,10 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
   padding-left: 0.625rem; }
+  @media screen and (max-width: 768px) {
+    .slogan__description {
+      padding-left: 0;
+      max-width: 460px; } }
 
 .arrow-scroll {
   position: absolute;
@@ -777,6 +798,9 @@ body {
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 24px; }
+  @media screen and (max-width: 768px) {
+    .features__item p {
+      min-width: 13.5625rem; } }
 
 .comments__list {
   display: -webkit-box;
@@ -792,6 +816,10 @@ body {
   height: 50vh;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%); }
+  @media screen and (max-width: 768px) {
+    .comments__item {
+      width: 50%;
+      height: 25vh; } }
 
 .comments__item {
   background-repeat: no-repeat;
@@ -866,6 +894,9 @@ body {
 .team {
   background: url("../img/team/team-bg.jpg") center center/cover no-repeat;
   position: relative; }
+  @media screen and (max-width: 768px) {
+    .team {
+      background: url("../img/team/team-bg-768.png") center center/cover no-repeat; } }
 
 .team__container {
   position: absolute;
@@ -887,6 +918,13 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center; }
+  @media screen and (max-width: 768px) {
+    .team__container {
+      width: 100%;
+      padding-left: 0;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; } }
 
 .team-acco__content {
   display: -webkit-box;
@@ -894,6 +932,15 @@ body {
   display: flex;
   height: 0;
   overflow: hidden; }
+  @media screen and (max-width: 768px) {
+    .team-acco__content {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; } }
 
 .team-acco__item {
   margin-bottom: 2.5rem; }
@@ -922,6 +969,12 @@ body {
   font-size: 0.875rem;
   font-weight: 400;
   margin-bottom: 1.0625rem; }
+  @media screen and (max-width: 768px) {
+    .team-acco__trigger {
+      font-size: 1.5rem;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; } }
   .team-acco__trigger:before {
     content: "";
     display: block;
@@ -940,6 +993,9 @@ body {
   display: inline-block;
   vertical-align: top;
   margin-right: 1.5625rem; }
+  @media screen and (max-width: 768px) {
+    .team-acco__photo {
+      margin-bottom: 5px; } }
 
 .team-acco__photo-img {
   max-width: 95%;
@@ -948,9 +1004,16 @@ body {
 .team-acco__text {
   color: #fff;
   width: 50%; }
+  @media screen and (max-width: 768px) {
+    .team-acco__text {
+      width: 70%;
+      text-align: center; } }
 
 .team-acco__text-title {
   font-weight: 700; }
+  @media screen and (max-width: 768px) {
+    .team-acco__text-title {
+      margin-bottom: 5px; } }
 
 .team-acco__text-content {
   font-weight: 300; }
@@ -966,6 +1029,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
+  @media screen and (max-width: 768px) {
+    .menu-acco {
+      right: 7%; } }
 
 .menu-acco__item {
   height: 100%;
@@ -1006,8 +1072,7 @@ body {
   -ms-transform-origin: 0 0;
   transform-origin: 0 0;
   left: 50%;
-  top: 100%;
-  margin-top: -rem(30px);
+  top: 97%;
   -webkit-transition: all .5s;
   -o-transition: all .5s;
   transition: all .5s; }
@@ -1041,6 +1106,13 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
+  @media screen and (max-width: 768px) {
+    .form {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      width: 70%; } }
 
 .form__column {
   -webkit-box-flex: 1;
@@ -1058,6 +1130,8 @@ body {
   border-radius: 5px;
   padding: 0.5rem 1.25rem;
   width: 100%; }
+  .form__input:focus {
+    border: 1px solid #e45028; }
 
 .form__row {
   display: -webkit-box;

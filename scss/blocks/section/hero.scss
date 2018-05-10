@@ -5,6 +5,9 @@
   background-position: 50%;
   background-size    : cover;
   position           : relative;
+  @include tablets {
+    background-image: url("./../img/main/bg-texture-768.png");
+  }
 }
 
 
