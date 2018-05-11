@@ -30,6 +30,9 @@
   @include tablets {
     text-align: center;
   }
+  @include phones {
+    font-size: 54px;
+  }
 }
 
 .slogan__description {

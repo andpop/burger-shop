@@ -25,12 +25,18 @@
 
 .section__title--hero {
 	@include phones {
-		font-size: 63px;
+		font-size: rem(63px);
 	}
 
-	@include phones--small {
-		font-size: 30px;
-	}  
+	// @include phones--small {
+	// 	font-size: 30px;
+	// }  
+}
+
+.section__title--about, .section__title--menu, .section__title--order {
+  @include phones {
+    font-size: rem(50px);
+  }
 }
 
 .section__title--menu {
@@ -41,5 +47,11 @@
   @include tablets {
     top : 5%;
     left: 5%;
+  }
+}
+
+.section__title--order {
+  @include phones {
+
   }
 }

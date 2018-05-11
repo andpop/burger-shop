@@ -1,6 +1,9 @@
 .features__list {
   display        : flex;
   justify-content: space-between;
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .features__item {

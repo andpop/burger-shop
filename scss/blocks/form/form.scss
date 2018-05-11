@@ -9,6 +9,12 @@
 .form__column {
   flex   : 1;
   padding: 0 rem(10px);
+  @include tablets {
+    margin-bottom: rem(10px);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .form__title {
@@ -41,6 +47,12 @@
   margin-right: rem(20px);
   &:last-child {
     margin-right: 0;
+  }
+}
+
+.form__block--floor {
+  @include phones {
+    display: none;
   }
 }
 
