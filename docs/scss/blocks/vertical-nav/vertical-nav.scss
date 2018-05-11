@@ -1,22 +1,22 @@
 .vertical-nav__item {
-  width        : 16px;
-  height       : 16px;
+  width        : rem(16px);
+  height       : rem(16px);
   position     : relative;
-  margin-bottom: 10px;
+  margin-bottom: rem(10px);
 }
 
 .vertical-nav__link {
   &:after {
     display: inline-block;
     content: '';
-    @include circle(5px, #fff); 
+    @include circle(6px, #fff); 
     @extend %center-block;
   }
   &:before {
     content: '';
     display: inline-block;
     opacity: 0;
-    @include round(16px, #fff); 
+    @include round(rem(16px), #fff); 
     @extend %center-block;
   }
 

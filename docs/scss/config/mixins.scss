@@ -24,3 +24,28 @@
   @return $px / 16px+0rem;
 }
 
+@mixin tablets {
+  @media screen and (max-width: $tablets) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media screen and (max-width: $phones) {
+    @content;
+  }
+}
+
+
+@mixin phones--small{
+  @media screen and (max-width: 375px){
+      @content;
+  }
+}
+
+@mixin tablets--big{
+  @media screen and (max-width: 920px){
+      @content;
+  }
+}
+

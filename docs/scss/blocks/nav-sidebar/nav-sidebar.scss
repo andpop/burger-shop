@@ -3,4 +3,8 @@
   right   : 5%;
   top     : 10%;
   color   : #fff;
+  @include tablets() {
+    display: none;
+  }
+
 }
