@@ -8,9 +8,9 @@
 	top     : 0;
 	bottom  : 0;
 	display : flex;
-	@include tablets {
-		right: 7%;
-	}
+	// @include tablets {
+	// 	right: 7%;
+	// }
 }
 
 .menu-acco__item {
@@ -30,19 +30,17 @@
 	height         : 100%;
 	text-decoration: none;
 	position       : relative;
+	&--meat {
+		background: url('../img/menu/menu_trigger-meat.jpg') center center / cover no-repeat;
+	}
+	&--vegan {
+		background: url('../img/menu/menu_trigger-vegan.jpg') center center / cover no-repeat;
+	}
+	&--diet {
+		background: url('../img/menu/menu_trigger-diet.jpg') center center / cover no-repeat;
+	}
 }
 
-.menu-acco__trigger--meat {
-  background: url('../img/menu/menu_trigger-meat.jpg') center center / cover no-repeat;
-}
-
-.menu-acco__trigger--vegan {
-  background: url('../img/menu/menu_trigger-vegan.jpg') center center / cover no-repeat;
-}
-
-.menu-acco__trigger--diet {
-  background: url('../img/menu/menu_trigger-diet.jpg') center center / cover no-repeat;
-}
 
 .menu-acco__trigger-text {
   color           : #ffffff;
@@ -68,6 +66,14 @@
 	background: rgba(#2f3234, .93);
 	width     : 0;
 	overflow  : hidden;
+}
+
+.menu-acco__content--active {
+	display: block;
+	width  : rem(500px);
+	@include tablets {
+		width: rem(340px);
+	}
 }
 
 .menu-acco__content-text {

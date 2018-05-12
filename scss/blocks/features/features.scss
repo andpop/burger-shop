@@ -8,10 +8,34 @@
 
 .features__item {
   text-align: center;
+  // width     : calc(100%/3);
+  width: 32%;
+  // outline: 1px solid black;
+  @include phones {
+    display        : flex;
+    flex-direction : row;
+    width          : 100%;
+    justify-content: flex-start;
+    margin-bottom  : rem(20px);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.features__icon + div {
+  @include phones {
+    width     : 70%;
+    text-align: left;
+  }
 }
 
 .features__icon {
   margin-bottom: rem(20px);
+  @include phones {
+    margin-bottom: 0;
+    width        : 30%;
+  }
 }
 
 .features__img {
@@ -30,16 +54,16 @@
 }
 
 .features__item p {
-  min-width  : rem(284px);
+  // min-width  : rem(284px);
   opacity    : 0.8;
   color      : $dark;
   font-family: Ubuntu;
   font-size  : rem(14px);
   font-weight: 300;
-  line-height: 24px;
-  @include tablets {
-    min-width: rem(217px);
-  }
+  // line-height: 24px;
+  // @include tablets {
+  //   min-width: rem(217px);
+  // }
 
 }
 

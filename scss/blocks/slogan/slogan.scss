@@ -1,15 +1,12 @@
 .slogan {
-  display     : flex;
-  padding-left: rem(17px);
+  width      : 50%;
+  padding-top: rem(30px);
   
   @include tablets {
-    flex-direction: column;
-    padding-left  : 0;
-    align-items   : center;
+      padding-top: 0;
+      width      : 75%;
   }
 }
-
-
 
 .slogan__image {
   max-width: 95%;
@@ -31,7 +28,7 @@
     text-align: center;
   }
   @include phones {
-    font-size: 54px;
+    font-size: rem(54px);
   }
 }
 
@@ -41,6 +38,6 @@
   padding-left   : rem(10px);
   @include tablets {
     padding-left: 0;
-    max-width   : 460px;
+    max-width   : rem(460px);
   }
 }
