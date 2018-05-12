@@ -3,14 +3,6 @@ body {
   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
 }
 
-// .wrapper {
-//   height   : 100%;
-//   min-width: 940px+20px;
-//   // min-height: 100%;
-//   // overflow: hidden;
-//   width: 100%;
-// }
-
 .wrapper {
   position: relative;
   width   : 100%;
@@ -21,26 +13,16 @@ body {
 }
 
 .container {
-  display        : flex;
-  justify-content: center;
-  align-items    : center;
-  flex-direction : column;
-  outline        : 1px solid red;
   margin         : 0 auto;
-  max-width      : rem(940px);
-  @include tablets {
-    max-width: rem(700px);
-  }
-  @include phones {
-    // max-width: rem(470px);
-    max-width: 95%;
-  }
-  position: relative;
-  width   : 95%;
+  max-width      : 940px;
+  width          : 97%;
+  height         : 100%;
+  position       : relative;
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+
+  // outline: 1px solid red;
 }
 
-// .maincontent {
-//   height    : 100%;
-//   min-height: 650px;
-// }
 

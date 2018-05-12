@@ -3,6 +3,10 @@
   justify-content: flex-end;
   align-items    : center;
   width          : 100%;
+  @include phones {
+    justify-content: center;
+    // margin-bottom  : rem(10px);
+  }
 }
 
 .socials__item {

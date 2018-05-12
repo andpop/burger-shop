@@ -1,17 +1,9 @@
-// .header {
-//   display        : flex;
-//   justify-content: space-between;
-//   align-items    : center;
-//   padding-top    : rem(10px);
-//   width          : 100%;
-// }
-
 .header {
 	padding-top    : rem(12px);
 	display        : flex;
 	justify-content: space-between;
 	align-items    : center;
-	width          : 100%;
+	// width          : 100%;
 }
 
 .header__btns {
@@ -31,14 +23,9 @@
 }
 
 .header__menu {
-	flex: 1;
-	// text-align  : right;
-	margin-right: rem(20px);
+	// flex: 1;
+	margin-right: rem(14px);
   
-  // @include tablets--big {
-  //   margin-right: 5px;
-  // }
-
   @include tablets() {
     display: none;
   }

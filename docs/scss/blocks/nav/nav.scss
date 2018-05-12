@@ -10,8 +10,8 @@
     display       : inline-block;
     vertical-align: middle;
     content       : '';
-    @include circle(5px, #fff);
-    margin: 0 rem(23px);
+    @include circle(4px, #fff);
+    margin: 0 rem(12px);
     // @include tablets--big {
     //   margin: 0 5px;
     // }
