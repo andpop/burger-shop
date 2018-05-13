@@ -438,8 +438,7 @@ body {
   flex-direction: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center;
-  outline: 1px solid red; }
+  justify-content: center; }
 
 .section {
   background-color: rgba(0, 0, 0, 0.31);
