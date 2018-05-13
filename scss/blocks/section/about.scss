@@ -4,16 +4,19 @@
   background-position: center bottom;
   background-size    : cover;
   position           : relative;
+  @include tablets {
+    background-image: url("./../img/about/about-bg-768.png");
+  }
 }
 
 
 .section__title--about {
   color        : $dark;
   font-family  : Gagalin;
-  font-size    : 72px;
+  font-size    : rem(72px);
   font-weight  : 400;
-  line-height  : 64.05px;
+  line-height  : rem(64px);
   text-align   : center;
-  margin-bottom: 54px;
+  margin-bottom: rem(54px);
   // padding-top: 130px;
 }

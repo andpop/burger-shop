@@ -1,11 +1,33 @@
 .header {
-  display        : flex;
-  justify-content: space-between;
-  align-items    : center;
-  padding-top    : 10px;
-  width          : 100%;
+	padding-top    : rem(12px);
+	display        : flex;
+	justify-content: space-between;
+	align-items    : center;
+	// outline        : 1px solid white;
+	// width          : 100%;
 }
 
-// .header__menu {
-//   margin-right: 11px;
-// }
+.header__btns {
+  display    : flex;
+  align-items: center;
+  // margin-left: auto;
+  // outline: 1px solid white;
+}
+
+.header__logo {
+  // margin-right: 15px;
+}
+
+.header__links {
+  display    : flex;
+  align-items: center;
+}
+
+.header__menu {
+	// flex: 1;
+	margin-right: rem(14px);
+  
+  @include tablets() {
+    display: none;
+  }
+}

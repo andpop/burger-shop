@@ -1,0 +1,137 @@
+.form {
+  display: flex;
+  @include tablets {
+    flex-direction: column;
+    width         : 95%;
+  }
+}
+
+.form__column {
+  flex   : 1;
+  padding: 0 rem(10px);
+  @include tablets {
+    margin-bottom: rem(10px);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.form__title {
+  // font-family: Ubuntu;
+  font-size  : rem(14px);
+  font-weight: 300;
+  line-height: rem(24px);
+}
+
+.form__input {
+  border       : none;
+  border-radius: 5px;
+  padding      : rem(8px) rem(20px);
+  width        : 100%;
+  &:focus {
+    border: 1px solid $orange;
+  }
+}
+
+.form__row {
+  display      : flex;
+  margin-bottom: rem(17px);
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.form__block--center {
+  @include phones {
+    text-align: center;
+  }
+}
+
+.form__block {
+  flex        : 1;
+  margin-right: rem(20px);
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.form__block--floor {
+  @include phones {
+    display: none;
+  }
+}
+
+.form__block--flat {
+  @include phones {
+    margin-right: 0;
+  }
+}
+
+
+.form__textarea {
+  width : 100%;
+  resize: none;
+  height: rem(110px);
+}
+
+.form__input-payment {
+  display: none;
+}
+
+.form__label-payment {
+  margin-right: rem(10px);
+  &:last-child {
+    margin-right: 0;
+  }
+  &:before {
+    content         : "";
+    background-color: #fff;
+    border-radius   : 50%;
+    display         : inline-block;
+    width           : rem(15px);
+    height          : rem(15px);
+    margin          : -2px rem(10px) 0 0;
+    vertical-align  : middle;
+    cursor          : pointer;
+  }
+}
+
+
+.form__input-payment:checked + .form__label-payment:before {
+  background-color: #e45028;
+  border          : 4px solid white;
+  box-sizing      : border-box;
+}
+
+.form__input-callback {
+  display: none;
+}
+
+.form__label-call::before {
+  content         : "";
+  background-color: white;
+  display         : inline-block;
+  width           : rem(15px);
+  height          : rem(15px);
+  margin          : -2px rem(10px) 0 0;
+  vertical-align  : middle;
+  cursor          : pointer;
+}
+
+.form__input-callback:checked + .form__label-call::before {
+  background     : #fff url("../img/order/check.svg") center no-repeat;
+  background-size: rem(11px) rem(11px);
+}
+
+.form__submit {
+  margin-right: rem(15px);
+}
+
+.form__reset {
+  background-color: transparent;
+  border          : none;
+  cursor          : pointer;
+  color           : #fff;
+  
+}
