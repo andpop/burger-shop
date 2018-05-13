@@ -438,7 +438,8 @@ body {
   flex-direction: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  outline: 1px solid red; }
 
 .section {
   background-color: rgba(0, 0, 0, 0.31);
@@ -463,6 +464,10 @@ body {
 .section__title--hero, .section__title--team, .section__title--order {
   color: #f9b43b; }
 
+@media screen and (max-width: 840px) {
+  .section__title--hero {
+    font-size: 4.1875rem; } }
+
 @media screen and (max-width: 768px) {
   .section__title--hero {
     margin-bottom: 0; } }
@@ -474,6 +479,11 @@ body {
 @media screen and (max-width: 480px) {
   .section__title--about, .section__title--menu, .section__title--order {
     font-size: 3.125rem; } }
+
+.section__title--burgers {
+  color: #fff;
+  line-height: 63.93px;
+  margin-bottom: 56px; }
 
 .section__title--menu {
   color: #fff;
@@ -502,9 +512,9 @@ body {
       background-image: url("./../img/main/bg-texture-768.png"); } }
 
 .hero__container {
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start; }
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
 
 .hero__content {
   display: -webkit-box;
@@ -514,6 +524,9 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -765,6 +778,9 @@ body {
   font-weight: 500;
   letter-spacing: -1.63px;
   line-height: 1; }
+  @media screen and (max-width: 840px) {
+    .slogan__text {
+      font-size: 3.625rem; } }
   @media screen and (max-width: 768px) {
     .slogan__text {
       text-align: center; } }
@@ -855,6 +871,60 @@ body {
   font-family: Ubuntu;
   font-size: 0.875rem;
   font-weight: 300; }
+
+.burgers {
+  background-color: #f9b43b;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#f9b43b), color-stop(48%, #eb8c38), color-stop(74%, #f9b43b), to(#f9b43b));
+  background-image: -webkit-linear-gradient(bottom, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%, #f9b43b 100%);
+  background-image: -o-linear-gradient(bottom, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%, #f9b43b 100%);
+  background-image: linear-gradient(to top, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%, #f9b43b 100%); }
+
+.burger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.burger__picture {
+  width: 49%;
+  outline: 1px solid wheat; }
+
+.burger__description {
+  width: 49%;
+  outline: 1px solid wheat; }
+
+.burger__img {
+  width: 95%; }
+
+.burger__text {
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.49812rem;
+  margin-bottom: 36px; }
+
+.burger__price {
+  display: inline-block;
+  color: #e35028;
+  font-family: Gagalin;
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 28.08px;
+  /* Text style for "500" */
+  letter-spacing: -1.79px; }
+
+.burger__currency {
+  font-size: 1.875rem;
+  letter-spacing: -0.75px; }
+
+.burger__order-link {
+  display: inline-block; }
 
 .comments__list {
   display: -webkit-box;
