@@ -10,16 +10,17 @@
 }
 
 .hero__container {
-  justify-content: flex-start;
+  // justify-content: flex-start;
+  justify-content: center;
 }
 
 .hero__content {
   display       : flex;
   flex-direction: row;
-  // flex-grow   : 0.8;
-  align-items : center;
-  padding-left: 3%;
-  // outline     : 1px solid wheat;
+  flex-grow     : 1;
+  align-items   : center;
+  padding-left  : 3%;
+  // outline       : 1px solid wheat;
   @include tablets {
     width          : 100%;
     flex-direction : column;

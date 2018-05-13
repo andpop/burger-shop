@@ -23,6 +23,9 @@
 }
 
 .section__title--hero {
+  @media screen and (max-width: 840px) {
+    font-size: rem(67px);
+  }
   @include tablets {
     margin-bottom: 0;
   }
@@ -35,6 +38,12 @@
   @include phones {
     font-size: rem(50px);
   }
+}
+
+.section__title--burgers {
+  color        : #fff;
+  line-height  : 63.93px;
+  margin-bottom: 56px;
 }
 
 .section__title--menu {
