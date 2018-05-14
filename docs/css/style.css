@@ -482,7 +482,7 @@ body {
 .section__title--burgers {
   color: #fff;
   line-height: 63.93px;
-  margin-bottom: 56px; }
+  margin-bottom: 1.875rem; }
 
 .section__title--menu {
   color: #fff;
@@ -878,6 +878,28 @@ body {
   background-image: -o-linear-gradient(bottom, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%, #f9b43b 100%);
   background-image: linear-gradient(to top, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%, #f9b43b 100%); }
 
+.burgers__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.slider-scroll__img--prev {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+.slider-scroll__img--next {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
+
 .burger {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -888,25 +910,45 @@ body {
   flex-direction: row;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between; }
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative; }
+  @media screen and (max-width: 768px) {
+    .burger {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; } }
 
 .burger__picture {
-  width: 49%;
-  outline: 1px solid wheat; }
+  width: 50%; }
+  @media screen and (max-width: 768px) {
+    .burger__picture {
+      width: 80%; } }
+  @media screen and (max-width: 480px) {
+    .burger__picture {
+      width: 90%; } }
 
 .burger__description {
-  width: 49%;
-  outline: 1px solid wheat; }
+  width: 49%; }
+  @media screen and (max-width: 768px) {
+    .burger__description {
+      width: 80%; } }
+  @media screen and (max-width: 480px) {
+    .burger__description {
+      width: 90%; } }
 
 .burger__img {
-  width: 95%; }
+  width: 100%; }
 
 .burger__text {
   color: #ffffff;
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.49812rem;
-  margin-bottom: 36px; }
+  margin-bottom: 2.25rem; }
 
 .burger__price {
   display: inline-block;
@@ -914,9 +956,9 @@ body {
   font-family: Gagalin;
   font-size: 4.5rem;
   font-weight: 400;
-  line-height: 28.08px;
-  /* Text style for "500" */
-  letter-spacing: -1.79px; }
+  line-height: 1.755rem;
+  letter-spacing: -1.79px;
+  margin-right: 1.875rem; }
 
 .burger__currency {
   font-size: 1.875rem;
@@ -924,6 +966,68 @@ body {
 
 .burger__order-link {
   display: inline-block; }
+
+.burger__composition {
+  color: #fff;
+  border-radius: 5px;
+  background: url("../img/burgers/burger.svg") center 14px no-repeat;
+  background-color: transparent;
+  background-color: rgba(228, 80, 40, 0.4);
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 90px;
+  height: 90px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  text-decoration: none; }
+  .burger__composition:hover {
+    background-color: #e45028; }
+  @media screen and (max-width: 768px) {
+    .burger__composition {
+      top: -60px; } }
+  @media screen and (max-width: 480px) {
+    .burger__composition {
+      top: -80px;
+      left: -20px; } }
+
+.burger__ingredients {
+  color: #ffffff;
+  font-family: Gagalin;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.75687rem;
+  padding-top: 3.9375rem;
+  text-align: center;
+  text-transform: uppercase; }
+
+.burger__calories {
+  font-family: Gagalin;
+  color: #fff;
+  opacity: 0.5;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.875rem;
+  text-transform: uppercase;
+  background: url("../img/burgers/kkal.svg") no-repeat;
+  position: absolute;
+  bottom: -30px;
+  width: 62px;
+  height: 62px;
+  padding-top: 26px;
+  text-align: center; }
+  @media screen and (max-width: 768px) {
+    .burger__calories {
+      right: 0;
+      top: -60px; } }
+  @media screen and (max-width: 480px) {
+    .burger__calories {
+      top: -80px;
+      right: -20px; } }
+
+.burger__calories-unit {
+  font-size: 0.875rem; }
 
 .comments__list {
   display: -webkit-box;

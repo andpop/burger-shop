@@ -2,20 +2,38 @@
   display        : flex;
   flex-direction : row;
   justify-content: space-between;
+  align-items    : center;
+  position       : relative;
+  // outline        : 1px solid red;
+  @include tablets {
+    flex-direction: column;
+  }
 }
 
 .burger__picture {
-  width  : 49%;
-  outline: 1px solid wheat;
+  width: 50%;
+  // outline: 1px solid wheat;
+  @include tablets {
+    width: 80%;
+  }
+  @include phones {
+    width: 90%;
+  }
 }
 
 .burger__description {
-  width  : 49%;
-  outline: 1px solid wheat;
+  width: 49%;
+  // outline: 1px solid wheat;
+  @include tablets {
+    width: 80%;
+  }
+  @include phones {
+    width: 90%;
+  }
 }
 
 .burger__img {
-  width: 95%;
+  width: 100%;
 }
 
 .burger__text {
@@ -23,18 +41,18 @@
   font-size    : rem(14px);
   font-weight  : 300;
   line-height  : rem(23.97px);
-  margin-bottom: 36px;
+  margin-bottom: rem(36px);
 }
 
 .burger__price {
-  display    : inline-block;
-  color      : $orange-light;
-  font-family: Gagalin;
-  font-size  : rem(72px);
-  font-weight: 400;
-  line-height: 28.08px;
-  /* Text style for "500" */
+  display       : inline-block;
+  color         : $orange-light;
+  font-family   : Gagalin;
+  font-size     : rem(72px);
+  font-weight   : 400;
+  line-height   : rem(28.08px);
   letter-spacing: -1.79px;
+  margin-right  : rem(30px);
 }
 
 .burger__currency {
@@ -44,4 +62,69 @@
 
 .burger__order-link {
   display: inline-block;
+}
+
+.burger__composition {
+  color           : #fff;
+  border-radius   : 5px;
+  background      : url("../img/burgers/burger.svg") center 14px no-repeat;
+  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(228,80,40,0.4);
+  position        : absolute;
+  top             : -80px;
+  left            : 0;
+  width           : 90px;
+  height          : 90px;
+  transition      : all 0.5s;
+  text-decoration : none;
+  &:hover {
+    background-color: #e45028;
+  }
+  @include tablets {
+    top: -60px;
+  }
+  @include phones {
+    top : -80px;
+    left: -20px;
+  }
+}
+
+.burger__ingredients {
+  color         : #ffffff;
+  font-family   : Gagalin;
+  font-size     : rem(14px);
+  font-weight   : 400;
+  line-height   : rem(28.11px);
+  padding-top   : rem(63px);
+  text-align    : center;
+  text-transform: uppercase;
+}
+
+.burger__calories {
+  font-family   : Gagalin;
+  color         : #fff;
+  opacity       : 0.5;
+  font-size     : rem(20px);
+  font-weight   : 400;
+  line-height   : rem(30px);
+  text-transform: uppercase;
+  background    : url("../img/burgers/kkal.svg") no-repeat;
+  position      : absolute;
+  bottom        : -30px;
+  width         : 62px;
+  height        : 62px;
+  padding-top   : 26px;
+  text-align    : center;
+  @include tablets {
+    right: 0;
+    top  : -60px;
+  }
+  @include phones {
+    top  : -80px;
+    right: -20px;
+  }
+}
+
+.burger__calories-unit {
+  font-size: rem(14px);
 }
