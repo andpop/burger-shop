@@ -1,6 +1,10 @@
 .nav-sidebar {
   position: fixed;
   right   : 5%;
-  top     : 10%;
+  top     : 12%;
   color   : #fff;
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+  
 }

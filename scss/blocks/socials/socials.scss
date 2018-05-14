@@ -1,0 +1,28 @@
+.socials {
+  display        : flex;
+  justify-content: flex-end;
+  align-items    : center;
+  width          : 100%;
+  @include phones {
+    justify-content: center;
+    // margin-bottom  : rem(10px);
+  }
+}
+
+.socials__item {
+  width         : rem(20px);
+  height        : rem(20px);
+  display       : inline-block;
+  vertical-align: middle;
+  margin-left   : rem(16px);
+  opacity       : 0.5;
+  transition    : all 0.5s;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.socials__link {
+  // opacity   : .5;
+  
+}

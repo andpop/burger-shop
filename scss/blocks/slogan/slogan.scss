@@ -1,6 +1,15 @@
 .slogan {
-  display     : flex;
-  padding-left: 17px;
+  width      : 50%;
+  padding-top: rem(30px);
+  
+  @include tablets {
+      padding-top: 0;
+      width      : 75%;
+  }
+}
+
+.slogan__image {
+  max-width: 95%;
 }
 
 .slogan__big-burger, .slogan__text {
@@ -15,10 +24,23 @@
   font-weight   : 500;
   letter-spacing: -1.63px;
   line-height   : 1;
+  @media screen and (max-width: 840px) {
+    font-size: rem(58px);
+  }
+  @include tablets {
+    text-align: center;
+  }
+  @include phones {
+    font-size: rem(54px);
+  }
 }
 
 .slogan__description {
   flex-direction : column;
   justify-content: center;
-  padding-left   : 10px;
+  padding-left   : rem(10px);
+  @include tablets {
+    padding-left: 0;
+    max-width   : rem(460px);
+  }
 }

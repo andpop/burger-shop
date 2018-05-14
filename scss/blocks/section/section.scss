@@ -1,9 +1,9 @@
 .section {
   background-color: rgba(0,0,0,0.31);
+  width           : 100%;
   display         : flex;
   height          : 100vh;
-  min-height      : 650px;
-  min-width       : 940px;
+  min-height      : rem(650px);
   position        : relative;
 }
 
@@ -13,8 +13,56 @@
   font-weight  : 400;
   line-height  : 1.42;
   margin-bottom: rem(20px);
+  @include tablets {
+    text-align: center;
+  }
+}
+
+.section__title--hero, .section__title--team, .section__title--order {
+  color: $yellow;
 }
 
 .section__title--hero {
-  color: $yellow;
+  @media screen and (max-width: 840px) {
+    font-size: rem(67px);
+  }
+  @include tablets {
+    margin-bottom: 0;
+  }
+	@include phones {
+		font-size: rem(63px);
+	}
+}
+
+.section__title--about, .section__title--menu, .section__title--order {
+  @include phones {
+    font-size: rem(50px);
+  }
+}
+
+.section__title--burgers {
+  color        : #fff;
+  line-height  : 63.93px;
+  margin-bottom: 56px;
+}
+
+.section__title--menu {
+  color   : #fff;
+  position: absolute;
+  top     : 10%;
+  left    : 10%;
+  @include tablets {
+    top : 5%;
+    left: 5%;
+  }
+  @include phones {
+    font-size: rem(50px);
+  }
+}
+
+.section__title--order {
+  text-align: center;
+  @include phones {
+
+  }
 }

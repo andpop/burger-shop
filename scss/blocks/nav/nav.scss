@@ -1,6 +1,5 @@
 .nav {
-  margin-right: 11px;
-  // outline     : 1px solid yellow;
+  margin-right: rem(11px);
 }
 
 .nav__item {
@@ -11,12 +10,15 @@
     display       : inline-block;
     vertical-align: middle;
     content       : '';
-    @include circle(5px, #fff);
-    margin: 0 23px;
+    @include circle(4px, #fff);
+    margin: 0 rem(12px);
+    // @include tablets--big {
+    //   margin: 0 5px;
+    // }
   }
   &:last-child:after {
     display: none;
-    // font-size: 13px;
+    // font-size: rem(13px);
   }
   // font-size: 0;
 }
@@ -25,9 +27,8 @@
   display: inline-block;
   color  : #ffffff;
   // font-family    : Ubuntu;
-  font-size  : 13px;
-  font-weight: 500;
-  // line-height    : 30px;
+  font-size      : rem(13px);
+  font-weight    : 500;
   text-transform : uppercase;
   text-decoration: none;
   &:hover {

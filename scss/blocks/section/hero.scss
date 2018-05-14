@@ -1,19 +1,52 @@
 .hero {
-  // background     : url("./../img/main/bg-texture.png") no-repeat center center;
   background-image   : url("./../img/main/bg-texture.png");
   background-repeat  : no-repeat;
   background-position: 50%;
   background-size    : cover;
   position           : relative;
+  @include tablets {
+    background-image: url("./../img/main/bg-texture-768.png");
+  }
 }
 
+.hero__container {
+  // justify-content: flex-start;
+  justify-content: center;
+}
 
 .hero__content {
   display       : flex;
-  flex-wrap     : wrap;
+  flex-direction: row;
   flex-grow     : 1;
   align-items   : center;
-  padding-bottom: 15%;
-  // outline: 5px dashed blue;
-  
+  padding-left  : 3%;
+  // outline       : 1px solid wheat;
+  @include tablets {
+    width          : 100%;
+    flex-direction : column;
+    justify-content: center;
+    text-align     : center;
+  }
+  @include phones {
+      padding-left: 0;
+  }  
+}
+
+.hero__big-burger {
+  width: 50%;
+
+  @include tablets {
+      width: 100%;
+  }  
+}
+
+.hero__big-burger-img {
+  width    : 100%;
+  max-width: 480px;
+  @include tablets {
+    max-width: 420px;
+  }
+  @include phones {
+    max-width: 330px;
+  }
 }
