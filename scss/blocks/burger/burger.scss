@@ -80,6 +80,11 @@
   &:hover {
     background-color: #e45028;
   }
+  &:hover .burger__ingredients-list {
+    width  : 270px;
+    padding: 15px 20px;
+  }
+
   @include tablets {
     top: -60px;
   }
@@ -98,6 +103,62 @@
   padding-top   : rem(63px);
   text-align    : center;
   text-transform: uppercase;
+}
+
+.burger__ingredients-list {
+  border-radius   : 5px;
+  background-color: rgba(255,255,255,0.9);
+  position        : absolute;
+  top             : 0px;
+  left            : 90px;
+  width           : 0;
+  color           : #2f3234;
+  font-size       : 0.875rem;
+  padding         : 15px 0;
+  overflow        : hidden;
+  white-space     : nowrap;
+  cursor          : auto;
+  transition      : all 0.5s;
+}
+
+.burger__ingredients-item {
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.burger__ingredients-icon {
+  display       : inline-block;
+  vertical-align: middle;
+  width         : 50px;
+  margin-right  : 20px;
+  text-align    : center;
+}
+
+.burger__ingredients-meal {
+  color         : $dark;
+  font-family   : Ubuntu;
+  font-size     : 14px;
+  font-weight   : 500;
+  line-height   : 24px;
+  display       : inline-block;
+  vertical-align: middle;
+  width         : 60px;
+  margin-right  : 50px;
+  text-align    : left;
+}
+
+.burger__ingredients-weight {
+  display       : inline-block;
+  vertical-align: middle;
+  text-align    : right;
+  min-width     : 40px;
+  color         : $dark;
+  font-family   : Ubuntu;
+  font-size     : 14px;
+  font-weight   : 300;
+  line-height   : 24px;
 }
 
 .burger__calories {
