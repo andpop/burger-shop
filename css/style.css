@@ -1366,6 +1366,13 @@ body {
   .menu-acco__item.active .menu-acco__trigger-text {
     color: #f9b43b; }
 
+.menu-acco__item--active .menu-acco__content {
+  display: block;
+  width: 31.25rem; }
+  @media screen and (max-width: 768px) {
+    .menu-acco__item--active .menu-acco__content {
+      width: 21.25rem; } }
+
 .menu-acco__trigger {
   width: 5rem;
   display: block;
@@ -1406,13 +1413,6 @@ body {
   background: rgba(47, 50, 52, 0.93);
   width: 0;
   overflow: hidden; }
-
-.menu-acco__content--active {
-  display: block;
-  width: 31.25rem; }
-  @media screen and (max-width: 768px) {
-    .menu-acco__content--active {
-      width: 21.25rem; } }
 
 .menu-acco__content-text {
   color: #fff;
