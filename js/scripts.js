@@ -18,8 +18,7 @@ hamburgermenu_close.addEventListener('click', function(event) {
   document.body.style.overflow        = '';
 });
 
-var l = hamburgermenu_item_links.length;
-for (let i = 0; i<l; i++) {
+for (let i = 0; i<hamburgermenu_item_links.length; i++) {
   hamburgermenu_item_links[i].addEventListener('click', function(event) {
     hamburgermenu_content.style.display = '';
     document.body.style.overflow        = '';
@@ -28,7 +27,6 @@ for (let i = 0; i<l; i++) {
 
 // Обработка аккордеона в секции "Команда"
 var teamacco_items = document.querySelectorAll('.team-acco__item');
-// var l              = teamacco_items.length;
 for (let i = 0; i<teamacco_items.length; i++) {
   teamacco_items[i].addEventListener('click', function(event) {
     event.preventDefault();
@@ -48,7 +46,6 @@ for (let i = 0; i<teamacco_items.length; i++) {
 
 // Обработка аккордеона в секции "Меню"
 var menuacco_items = document.querySelectorAll('.menu-acco__item');
-// var l              = menuacco_items.length;
 for (let i = 0; i<menuacco_items.length; i++) {
   menuacco_items[i].addEventListener('click', function(event) {
     event.preventDefault();
