@@ -95,23 +95,25 @@ function getFullCommentHTML(commentButton) {
 function createPopup(content) {
   const popupElement = document.createElement("div");
   popupElement.classList.add("popup");
-
-  const popup                  = document.querySelector("#popupTemplate");
-        popupElement.innerHTML = popup.innerHTML;
-
-  const closeElement = popupElement.querySelector(".popup__close");
-  closeElement.addEventListener("click", function(event) {
-    event.preventDefault();
-    document.body.removeChild(popupElement);
-    document.body.style.overflow = '';
-
-  });
+  // Щелчок вне сообщения - закрыть popup
   popupElement.addEventListener("click", function (event) {
     if (event.target.classList.contains('popup')) {
       document.body.removeChild(popupElement);
       document.body.style.overflow = '';
     };
   });
+
+  const popup                  = document.querySelector("#popupTemplate");
+        popupElement.innerHTML = popup.innerHTML;
+
+  const closeElement = popupElement.querySelector(".popup__close");
+  // Щелчок на крестике - закрыть popup
+  closeElement.addEventListener("click", function(event) {
+    event.preventDefault();
+    document.body.removeChild(popupElement);
+    document.body.style.overflow = '';
+  });
+  
   const contentElement           = popupElement.querySelector(".popup__content");
         contentElement.innerHTML = content;
 
