@@ -106,10 +106,12 @@ function createPopup(content) {
     document.body.style.overflow = '';
 
   });
-  // const popupContainer = popupElement.querySelector(".popup__container");
-  // popupContainer.addEventListener("click", function () {
-  //   console.log("Click!");
-  // });
+  popupElement.addEventListener("click", function (event) {
+    if (event.target.classList.contains('popup')) {
+      document.body.removeChild(popupElement);
+      document.body.style.overflow = '';
+    };
+  });
   const contentElement           = popupElement.querySelector(".popup__content");
         contentElement.innerHTML = content;
 
