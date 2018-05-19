@@ -1,64 +1,64 @@
 
 
 // Обработка полноэкранного гамбургер-меню
-var hamburgermenu_link       = document.querySelector('.hamburger-menu-link');
-var hamburgermenu_content    = document.querySelector('.hamburger-menu__content');
-var hamburgermenu_close      = document.querySelector('.hamburger-menu__close');
-var hamburgermenu_item_links = document.querySelectorAll('.hamburger-menu__link');
+var hamburgermenuLink      = document.querySelector('.hamburger-menu-link');
+var hamburgermenuContent   = document.querySelector('.hamburger-menu__content');
+var hamburgermenuClose     = document.querySelector('.hamburger-menu__close');
+var hamburgermenuItemLinks = document.querySelectorAll('.hamburger-menu__link');
 
-hamburgermenu_link.addEventListener('click', function(event) {
+hamburgermenuLink.addEventListener('click', function(event) {
   event.preventDefault();
-  hamburgermenu_content.style.display = 'flex';
-  document.body.style.overflow        = 'hidden';
+  hamburgermenuContent.style.display = 'flex';
+  document.body.style.overflow       = 'hidden';
 });
 
-hamburgermenu_close.addEventListener('click', function(event) {
+hamburgermenuClose.addEventListener('click', function(event) {
   event.preventDefault();
-  hamburgermenu_content.style.display = '';
-  document.body.style.overflow        = '';
+  hamburgermenuContent.style.display = '';
+  document.body.style.overflow       = '';
 });
 
-for (let i = 0; i<hamburgermenu_item_links.length; i++) {
-  hamburgermenu_item_links[i].addEventListener('click', function(event) {
-    hamburgermenu_content.style.display = '';
-    document.body.style.overflow        = '';
+for (let i = 0; i<hamburgermenuItemLinks.length; i++) {
+  hamburgermenuItemLinks[i].addEventListener('click', function(event) {
+    hamburgermenuContent.style.display = '';
+    document.body.style.overflow       = '';
   })
 };
 
 // Обработка аккордеона в секции "Команда"
-var teamacco_items = document.querySelectorAll('.team-acco__item');
-for (let i = 0; i<teamacco_items.length; i++) {
-  teamacco_items[i].addEventListener('click', function(event) {
+var teamAccoItems = document.querySelectorAll('.team-acco__item');
+for (let i = 0; i<teamAccoItems.length; i++) {
+  teamAccoItems[i].addEventListener('click', function(event) {
     event.preventDefault();
     event.stopPropagation();
-    if (teamacco_items[i].classList.contains('team-acco__item--active')) {
-      teamacco_items[i].classList.remove('team-acco__item--active');
+    if (teamAccoItems[i].classList.contains('team-acco__item--active')) {
+      teamAccoItems[i].classList.remove('team-acco__item--active');
     } 
     else {      
-      for (let j = 0; j < teamacco_items.length; j++) {
-        teamacco_items[j].classList.remove('team-acco__item--active');
+      for (let j = 0; j < teamAccoItems.length; j++) {
+        teamAccoItems[j].classList.remove('team-acco__item--active');
       }  
       
-      teamacco_items[i].classList.add('team-acco__item--active');
+      teamAccoItems[i].classList.add('team-acco__item--active');
     }
   })
 };
 
 // Обработка аккордеона в секции "Меню"
-var menuacco_items = document.querySelectorAll('.menu-acco__item');
-for (let i = 0; i<menuacco_items.length; i++) {
-  menuacco_items[i].addEventListener('click', function(event) {
+var menuAccoItems = document.querySelectorAll('.menu-acco__item');
+for (let i = 0; i<menuAccoItems.length; i++) {
+  menuAccoItems[i].addEventListener('click', function(event) {
     event.preventDefault();
     event.stopPropagation();
-    if (menuacco_items[i].classList.contains('menu-acco__item--active')) {
-      menuacco_items[i].classList.remove('menu-acco__item--active');
+    if (menuAccoItems[i].classList.contains('menu-acco__item--active')) {
+      menuAccoItems[i].classList.remove('menu-acco__item--active');
     } 
     else {      
-      for (let j = 0; j < menuacco_items.length; j++) {
-        menuacco_items[j].classList.remove('menu-acco__item--active');
+      for (let j = 0; j < menuAccoItems.length; j++) {
+        menuAccoItems[j].classList.remove('menu-acco__item--active');
       }  
       
-      menuacco_items[i].classList.add('menu-acco__item--active');
+      menuAccoItems[i].classList.add('menu-acco__item--active');
     }
   })
 };
