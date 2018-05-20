@@ -24,6 +24,17 @@
 	}
 }
 
+.menu-acco__item--active {
+	.menu-acco__content {
+		display: block;
+		width  : rem(500px);
+		@include tablets {
+			width: rem(340px);
+		}
+	}
+		
+}
+
 .menu-acco__trigger {
 	width          : rem(80px);
 	display        : block;
@@ -68,13 +79,6 @@
 	overflow  : hidden;
 }
 
-.menu-acco__content--active {
-	display: block;
-	width  : rem(500px);
-	@include tablets {
-		width: rem(340px);
-	}
-}
 
 .menu-acco__content-text {
   color      : #fff;
