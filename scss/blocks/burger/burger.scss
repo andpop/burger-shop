@@ -86,11 +86,11 @@
   }
 
   @include tablets {
-    top: -60px;
+    top: -50px;
   }
   @include phones {
-    top : -80px;
-    left: -20px;
+    top : -70px;
+    left: 0;
   }
 }
 
@@ -178,11 +178,11 @@
   text-align    : center;
   @include tablets {
     right: 0;
-    top  : -60px;
+    top  : -50px;
   }
   @include phones {
-    top  : -80px;
-    right: -20px;
+    top  : -70px;
+    right: 0;
   }
 }
 
