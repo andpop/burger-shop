@@ -1051,11 +1051,11 @@ body {
     padding: 15px 20px; }
   @media screen and (max-width: 768px) {
     .burger__composition {
-      top: -60px; } }
+      top: -50px; } }
   @media screen and (max-width: 480px) {
     .burger__composition {
-      top: -80px;
-      left: -20px; } }
+      top: -70px;
+      left: 0; } }
 
 .burger__ingredients {
   color: #ffffff;
@@ -1137,11 +1137,11 @@ body {
   @media screen and (max-width: 768px) {
     .burger__calories {
       right: 0;
-      top: -60px; } }
+      top: -50px; } }
   @media screen and (max-width: 480px) {
     .burger__calories {
-      top: -80px;
-      right: -20px; } }
+      top: -70px;
+      right: 0; } }
 
 .burger__calories-unit {
   font-size: 0.875rem; }
@@ -1420,6 +1420,22 @@ body {
   @media screen and (max-width: 768px) {
     .menu-acco__item--active .menu-acco__content {
       width: 21.25rem; } }
+  @media screen and (max-width: 480px) {
+    .menu-acco__item--active .menu-acco__content {
+      display: none; } }
+
+.menu-acco__item--additional {
+  display: none;
+  width: 100%;
+  z-index: 100; }
+  .menu-acco__item--additional .menu-acco__content {
+    display: block;
+    width: 100%; }
+  @media screen and (max-width: 480px) {
+    .menu-acco__item--additional {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
 
 .menu-acco__trigger {
   width: 5rem;
@@ -1460,7 +1476,18 @@ body {
   height: 100%;
   background: rgba(47, 50, 52, 0.93);
   width: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
+
+.menu-acco__close {
+  display: none;
+  width: 1.25rem;
+  position: absolute;
+  right: 1.25rem;
+  top: 1.25rem; }
+  @media screen and (max-width: 480px) {
+    .menu-acco__close {
+      display: block; } }
 
 .menu-acco__content-text {
   color: #fff;

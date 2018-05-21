@@ -57,6 +57,33 @@ for (let i = 0; i<menuAccoItems.length; i++) {
         menuAccoItems[j].classList.remove('menu-acco__item--active');
       }  
       menuAccoItems[i].classList.add('menu-acco__item--active');
+      
+      // Удаляем все дополнительные блоки с меню
+      let additionalMenuItems = document.querySelectorAll('.menu-acco__item--additional');
+      for (let j = 0; j < additionalMenuItems.length; j++) additionalMenuItems[j].remove();
+
+      // Создаем дополнительный блок, содержимое копируем из выбранного элемента меню
+      let additionalMenuItem = document.createElement("div");
+      let activeMenuItem     = event.target.closest(".menu-acco__item");
+
+      additionalMenuItem.innerHTML = activeMenuItem.innerHTML;
+      additionalMenuItem.classList.add("menu-acco__item", "menu-acco__item--additional");
+      let sectionMenu = document.querySelector(".menu");
+      sectionMenu.appendChild(additionalMenuItem);
+
+      // Добавляем обработчики для закрытия дополнительного блока
+      additionalMenuItem.addEventListener('click', event => {
+        event.preventDefault();
+        let additionalMenuItem = document.querySelector(".menu-acco__item--additional");
+        additionalMenuItem.remove();        
+      });
+      let closePictogram = document.querySelector(".menu-acco__close");
+      closePictogram.addEventListener("click", event => {
+        event.preventDefault();
+        let additionalMenuItem = document.querySelector(".menu-acco__item--additional");
+        additionalMenuItem.remove();        
+      });
+
     }
   })
 };
