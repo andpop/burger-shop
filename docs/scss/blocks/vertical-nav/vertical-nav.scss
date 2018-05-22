@@ -25,3 +25,18 @@
   }
   
 }
+
+.vertical-nav__item--active {
+  &:after {
+    display: inline-block;
+    content: '';
+    @include circle(6px, #fff); 
+    @extend %center-block;
+  }
+  &:before {
+    content: '';
+    display: inline-block;
+    opacity: 1;
+    @include round(rem(16px), #fff); 
+    @extend %center-block;
+  }}
