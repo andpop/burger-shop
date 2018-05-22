@@ -2,9 +2,10 @@
   background-color: rgba(0,0,0,0.31);
   width           : 100%;
   display         : flex;
-  height          : 100vh;
-  min-height      : rem(650px);
-  position        : relative;
+  height          : 100%;
+  // height          : 100vh;
+  min-height: rem(650px);
+  position  : relative;
 }
 
 .section__title {

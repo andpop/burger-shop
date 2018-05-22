@@ -190,3 +190,106 @@ function showNthSlide(n, shiftProcent) {
   sliderList.style.right = right + "%";
 }
   
+
+//======================== OnePageScroll ==================================
+const sections              = $('.section');
+const display               = $('.maincontent');
+const verticalNavItems      = $('.vertical-nav__item');
+let   inScroll              = false;
+const inertionMouseDuration = 300;                                           // за 300 миллисекунд гасится инерция мыши на Mac
+const mobileDetect          = new MobileDetect(window.navigator.userAgent);
+const isMobile              = mobileDetect.mobile();
+
+const performTransition = sectionNomer => {
+  const shiftProcent = `${-sectionNomer*100 }%`;
+
+  if (sectionNomer < 0) return;
+  
+  if (!inScroll) {
+    inScroll = true;
+    
+    sections
+      .eq(sectionNomer)
+      .addClass('section--active')
+      .siblings()
+      .removeClass('section--active');
+  
+    verticalNavItems
+      .eq(sectionNomer)
+      .addClass('vertical-nav__item--active')
+      .siblings()
+      .removeClass('vertical-nav__item--active');
+
+    display.css({
+      "transform"        : `translateY(${shiftProcent})`,
+      "-webkit-transform": `translateY(${shiftProcent})`
+    });
+      
+  };
+  
+  // Задержка анимации в миллисекундах
+  const transitionDuration = parseInt(display.css('transition-duration')) * 1000;
+  setTimeout( () => {
+    inScroll = false;
+  }, transitionDuration + inertionMouseDuration);      
+}
+
+const scrollSection = direction => {
+  const activeSection = sections.filter('.section--active');
+  const nextSection   = activeSection.next();
+  const prevSection   = activeSection.prev();
+
+  if (direction == "up") {
+    performTransition(prevSection.index());
+  } else {
+    performTransition(nextSection.index());
+  };
+}
+
+$(document).on({
+  wheel : e => {
+    const deltaY = e.originalEvent.deltaY;
+    
+    let direction = deltaY < 0 ? 'up' : 'down';
+    scrollSection(direction);
+  },
+  keydown: e => {
+    const upCode = 38, pageUpCode = 33, downCode = 40, pageDownCode = 34;
+    // console.log(e.keyCode);
+    if ((e.keyCode == upCode) || (e.keyCode == pageUpCode))
+      scrollSection('up');
+    if ((e.keyCode == downCode) || (e.keyCode == pageDownCode))
+      scrollSection('down');
+  }
+} );
+
+verticalNavItems.on('click', function(e) {
+  e.preventDefault();
+  const activeNavItem = $(this);
+  activeNavItem
+    .addClass('vertical-nav__item--active')
+    .siblings()
+    .removeClass('vertical-nav__item--active'); 
+  const sectionNomer = $('.vertical-nav__item--active').index('.vertical-nav__item');
+  performTransition(sectionNomer);
+});
+
+$('.arrow-scroll').on('click', e => {
+  e.preventDefault();
+  performTransition(1);
+});
+
+$('[data-scroll-to]').on('click', e => {
+  e.preventDefault();
+  const sectionNomer = $(e.currentTarget).data('scroll-to');
+  performTransition(sectionNomer);
+});
+
+if (isMobile) {
+  $(document).swipe({
+    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+      const swipeDirection = direction == 'up' ? 'down' : 'up';
+      scrollSection(swipeDirection);  
+    }
+  });
+};

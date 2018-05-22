@@ -301,7 +301,7 @@ template {
 [hidden] {
   display: none; }
 
-.vertical-nav__link:after, .vertical-nav__link:before {
+.vertical-nav__link:after, .vertical-nav__link:before, .vertical-nav__item--active:after, .vertical-nav__item--active:before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -421,7 +421,8 @@ body {
   position: relative;
   width: 100%;
   min-height: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  height: 100%; }
 
 .container {
   margin: 0 auto;
@@ -440,13 +441,20 @@ body {
   -ms-flex-pack: center;
   justify-content: center; }
 
+.maincontent {
+  height: 100%;
+  min-height: 640px;
+  -webkit-transition: 0.8s;
+  -o-transition: 0.8s;
+  transition: 0.8s; }
+
 .section {
   background-color: rgba(0, 0, 0, 0.31);
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100vh;
+  height: 100%;
   min-height: 40.625rem;
   position: relative; }
 
@@ -1266,6 +1274,23 @@ body {
 
 .vertical-nav__link:hover:before {
   opacity: 1; }
+
+.vertical-nav__item--active:after {
+  display: inline-block;
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: #fff; }
+
+.vertical-nav__item--active:before {
+  content: '';
+  display: inline-block;
+  opacity: 1;
+  border: 1px solid #fff;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.5rem; }
 
 .team {
   background: url("../img/team/team-bg.jpg") center center/cover no-repeat;
