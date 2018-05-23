@@ -31,9 +31,25 @@
 		@include tablets {
 			width: rem(340px);
 		}
+		@include phones {
+			display: none;
+		}
 	}
-		
 }
+
+.menu-acco__item--additional {
+	display: none;
+	width  : 100%;
+	z-index: 100;
+	.menu-acco__content {
+		display: block;
+		width  : 100%;
+	}
+	@include phones {
+		display: flex;
+	}
+}
+
 
 .menu-acco__trigger {
 	width          : rem(80px);
@@ -77,8 +93,19 @@
 	background: rgba(#2f3234, .93);
 	width     : 0;
 	overflow  : hidden;
+	position  : relative;
 }
 
+.menu-acco__close {
+	display : none;
+	width   : rem(20px);
+	position: absolute;
+	right   : rem(20px);
+	top     : rem(20px);
+	@include phones {
+		display: block;
+	}
+}
 
 .menu-acco__content-text {
   color      : #fff;

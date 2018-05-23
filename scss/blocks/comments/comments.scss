@@ -65,6 +65,11 @@
   }
 }
 
+.comments__name--full {
+  color: $dark;
+}
+
+
 .comments__text {
   color        : #ffffff;
   font-family  : Ubuntu;
@@ -75,6 +80,11 @@
   @include phones {
     display: none;
   }
+}
+
+.comments__text--full {
+  display: block;
+  color  : $dark;
 }
 
 .comments__btn {
