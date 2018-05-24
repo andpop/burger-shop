@@ -33,6 +33,7 @@
 // }
 
 .comments__brief {
+  color  : #ffffff;
   height : 100%;
   padding: rem(50px) rem(30px) rem(30px) rem(20px);
   opacity: 0;
@@ -48,8 +49,8 @@
   }
 }
 
+
 .comments__name {
-  color        : #ffffff;
   font-family  : Gagalin;
   font-size    : rem(14px);
   font-weight  : 400;
@@ -71,7 +72,6 @@
 
 
 .comments__text {
-  color        : #ffffff;
   font-family  : Ubuntu;
   font-size    : rem(14px);
   font-weight  : 300;

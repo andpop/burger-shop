@@ -93,31 +93,37 @@ for (let i = 0; i<menuAccoItems.length; i++) {
 const commentButtonList = document.querySelectorAll(".comments__btn");
 
 for (let commentButton of commentButtonList) {
-  commentButton.addEventListener("click", function(event) {
+  commentButton.addEventListener("click", event => {
     event.preventDefault();
-    const full_comment = getFullCommentHTML(this);
-    const successPopup = createPopup(full_comment);
-    document.body.appendChild(successPopup);
+
+    // Находим активный отзыв, к которому относится нажатая кнопка
+    const activeComment = event.target.closest(".comments__brief");
+
+    // Создаем новый popup, данные будут взяты из активного отзыва
+    const popup = createCommentPopup(activeComment);
+    document.body.appendChild(popup);
     document.body.style.overflow = 'hidden';
 });
 }
 
-function getFullCommentHTML(commentButton) {
-  let fullComment        = 'Полного комментария нет';
-  let fullCommentElement = commentButton.nextElementSibling;
-  if (!commentButton.classList.contains('comments__btn--mobile')) 
-    fullCommentElement = commentButton.nextElementSibling.nextElementSibling;
-  if (fullCommentElement) {
-    if (fullCommentElement.classList.contains('full_commentContent')) {
-      fullComment = fullCommentElement.innerHTML;
-    }
-  }
-  return fullComment;
-};
+function createCommentPopup(activeComment) {
+  //Выделяем автора и текст активного отзыва
+  const authorElementFromHTML  = activeComment.children[0],
+        contentElementFromHTML = activeComment.children[1];
 
-function createPopup(content) {
-  const popupElement = document.createElement("div");
+  //Создаем новый popup
+  const popupElement  = document.createElement("div"),
+        popupTemplate = document.querySelector("#popup-comment-template");
+  
   popupElement.classList.add("popup");
+  popupElement.innerHTML = popupTemplate.innerHTML;
+  
+  const authorElement  = popupElement.querySelector(".comments__name"),
+        contentElement = popupElement.querySelector(".comments__content");
+  
+  authorElement.innerHTML  = authorElementFromHTML.innerHTML;
+  contentElement.innerHTML = contentElementFromHTML.innerHTML;
+
   // Щелчок вне сообщения - закрыть popup
   popupElement.addEventListener("click", event => {
     if (event.target.classList.contains('popup')) {
@@ -126,21 +132,14 @@ function createPopup(content) {
     };
   });
 
-  const popup                  = document.querySelector("#popupTemplate");
-        popupElement.innerHTML = popup.innerHTML;
-
-  const closeElement = popupElement.querySelector(".popup__close");
   // Щелчок на крестике - закрыть popup
+  const closeElement = popupElement.querySelector(".popup__close");
   closeElement.addEventListener("click", event => {
     event.preventDefault();
     document.body.removeChild(popupElement);
     document.body.style.overflow = '';
   });
   
-  const contentElement = popupElement.querySelector(".popup__content");
-  
-  contentElement.innerHTML = content;
-
   return popupElement;
 }
 
@@ -293,3 +292,70 @@ if (isMobile) {
     }
   });
 };
+
+
+//============================= Обработка формы заказа ===============================
+const btnOrder = $('.form');
+btnOrder.on('submit', e => {
+  e.preventDefault();
+  console.log("Form submitting...")
+
+  // AJAX-запрос
+
+  var   message = '';
+  const form    = $(e.target),
+        dataXHR = form.serialize(),
+        urlXHR  = form.attr('action'),
+        typeXHR = form.attr('method');
+
+  const ajax = $.ajax({
+    type: typeXHR,
+    url : urlXHR,
+    data: dataXHR,
+  });
+
+  ajax.done( msg => {
+    const popup = createOrderPopup(msg);
+    document.body.appendChild(popup);
+    document.body.style.overflow = 'hidden';
+  }).fail(function(jqXHR, textStatus) {
+    const popup = createOrderPopup(`Ошибка при формировании заказа. <br> Статус: ${textStatus}`);
+    document.body.appendChild(popup);
+    document.body.style.overflow = 'hidden';
+});
+
+  // let   message = 'Заказ отправлен. Менеджер свяжется с Вами в ближайшее время';
+
+  function createOrderPopup(message) {
+    //Создаем новый popup
+    const popupElement  = document.createElement("div"),
+          popupTemplate = document.querySelector("#popup-form-template");
+    
+    popupElement.classList.add("popup");
+    popupElement.innerHTML = popupTemplate.innerHTML;
+    
+    const messageElement = popupElement.querySelector(".popup__message");
+    
+    messageElement.innerHTML = message;
+  
+    // Щелчок вне сообщения - закрыть popup
+    popupElement.addEventListener("click", event => {
+      if (event.target.classList.contains('popup')) {
+        document.body.removeChild(popupElement);
+        document.body.style.overflow = '';
+      };
+    });
+  
+    // Щелчок на кнопке - закрыть popup
+    const closeElement = popupElement.querySelector(".btn");
+    closeElement.addEventListener("click", event => {
+      event.preventDefault();
+      document.body.removeChild(popupElement);
+      document.body.style.overflow = '';
+    });
+    return popupElement;
+  }
+
+});
+
+
