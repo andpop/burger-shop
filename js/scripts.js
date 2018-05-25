@@ -10,18 +10,21 @@ hamburgermenuLink.addEventListener('click', event => {
   event.preventDefault();
   hamburgermenuContent.style.display = 'flex';
   document.body.style.overflow       = 'hidden';
+  $('.wrapper').toggleClass('disableOPS');
 });
 
 hamburgermenuClose.addEventListener('click', event => {
   event.preventDefault();
   hamburgermenuContent.style.display = '';
   document.body.style.overflow       = '';
+  $('.wrapper').toggleClass('disableOPS');
 });
 
 for (let i = 0; i<hamburgermenuItemLinks.length; i++) {
   hamburgermenuItemLinks[i].addEventListener('click', event => {
     hamburgermenuContent.style.display = '';
     document.body.style.overflow       = '';
+    $('.wrapper').toggleClass('disableOPS');
   })
 };
 
@@ -103,6 +106,7 @@ for (let commentButton of commentButtonList) {
     const popup = createCommentPopup(activeComment);
     document.body.appendChild(popup);
     document.body.style.overflow = 'hidden';
+    $('.wrapper').toggleClass('disableOPS');
 });
 }
 
@@ -129,6 +133,7 @@ function createCommentPopup(activeComment) {
     if (event.target.classList.contains('popup')) {
       document.body.removeChild(popupElement);
       document.body.style.overflow = '';
+      $('.wrapper').toggleClass('disableOPS');
     };
   });
 
@@ -138,6 +143,7 @@ function createCommentPopup(activeComment) {
     event.preventDefault();
     document.body.removeChild(popupElement);
     document.body.style.overflow = '';
+    $('.wrapper').toggleClass('disableOPS');
   });
   
   return popupElement;
@@ -203,6 +209,7 @@ const performTransition = sectionNomer => {
   const shiftProcent = `${-sectionNomer*100 }%`;
 
   if (sectionNomer < 0) return;
+  if ($('.wrapper').hasClass('disableOPS')) return;
   
   if (!inScroll) {
     inScroll = true;
@@ -322,6 +329,7 @@ btnOrder.on('submit', e => {
     const popup = createOrderPopup(`Ошибка при формировании заказа. <br> Статус: ${textStatus}`);
     document.body.appendChild(popup);
     document.body.style.overflow = 'hidden';
+    $('.wrapper').toggleClass('disableOPS');
 });
 
   // let   message = 'Заказ отправлен. Менеджер свяжется с Вами в ближайшее время';
@@ -343,6 +351,7 @@ btnOrder.on('submit', e => {
       if (event.target.classList.contains('popup')) {
         document.body.removeChild(popupElement);
         document.body.style.overflow = '';
+        $('.wrapper').toggleClass('disableOPS');
       };
     });
   
@@ -352,6 +361,7 @@ btnOrder.on('submit', e => {
       event.preventDefault();
       document.body.removeChild(popupElement);
       document.body.style.overflow = '';
+      $('.wrapper').toggleClass('disableOPS');
     });
     return popupElement;
   }
