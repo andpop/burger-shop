@@ -372,9 +372,58 @@ btnOrder.on('submit', e => {
 //============================== Карта Яндекс =============================================
 ymaps.ready(init);
 
+var placemarks = [
+  {
+    latitude      : 59.97,
+    longitude     : 30.31,
+    hintContent   : 'ул. Литераторов, д. 19',
+    balloonContent: 'Самые вкусные бургеры! <br> Заходите с 09:00 до 20:00 на ул. Литераторов, д. 19'
+  },
+  {
+    latitude      : 59.94,
+    longitude     : 30.25,
+    hintContent   : 'Малый проспект, д. 64',
+    balloonContent: 'Самые вкусные бургеры! <br> Заходите с 09:00 до 20:00 на Малый проспект, д. 64'
+  },
+  {
+    latitude      : 59.93,
+    longitude     : 30.34,
+    hintContent   : 'наб. реки Фонтанки, д. 56',
+    balloonContent: 'Самые вкусные бургеры! <br> Заходите с 09:00 до 20:00 на наб. реки Фонтанки, д. 56'
+  }
+
+];
+
 function init () {
   var myMap = new ymaps.Map('map', {
-    center: [59.94, 30.32],
-    zoom  : 12
-  })
+    center   : [59.94, 30.32],
+    zoom     : 12,
+    behaviors: ['drag']
+  });
+  myMap.controls.add('zoomControl');
+
+  placemarks.forEach(obj => {
+    let placemark = new ymaps.Placemark([obj.latitude, obj.longitude], {
+      hintContent   : obj.hintContent,
+      balloonContent: obj.balloonContent
+    }, {
+      iconImageHref  : './img/contacts/map-marker.svg',
+      iconImageSize  : [46, 57],
+      iconImageOffset: [-26, -52]
+    });
+    myMap.geoObjects.add(placemark);
+  });
+
+
+  // var placemark = new ymaps.Placemark([59.97, 30.31], {
+  //   hintContent   : 'ул. Литераторов, д. 19',
+  //   balloonContent: 'Самые вкусные бургеры! <br> Заходите с 09:00 до 20:00 на ул. Литераторов, д. 19'
+  // }, {
+  //   iconImageHref  : './img/contacts/map-marker.svg',
+  //   iconImageSize  : [46, 57],
+  //   iconImageOffset: [-26, -52]
+  // });
+
+  // myMap.geoObjects.add(placemark);
 };
+
