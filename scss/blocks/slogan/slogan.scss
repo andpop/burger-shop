@@ -33,6 +33,9 @@
   @include phones {
     font-size: rem(54px);
   }
+  @include phones--small {
+    font-size: rem(44px);
+  }
 }
 
 .slogan__description {

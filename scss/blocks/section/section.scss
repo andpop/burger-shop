@@ -31,7 +31,10 @@
     margin-bottom: 0;
   }
 	@include phones {
-		font-size: rem(63px);
+    font-size: rem(63px);
+	}
+	@include phones--small {
+    font-size: rem(54px);
 	}
 }
 
@@ -43,8 +46,15 @@
 
 .section__title--burgers {
   color        : #fff;
-  line-height  : 63.93px;
+  line-height  : rem(63.93px);
   margin-bottom: rem(30px);
+  @include phones {
+    margin-bottom: rem(10px);
+    font-size    : rem(64px);
+  }
+  @include phones--small {
+    line-height: rem(50px);
+  }
 }
 
 .section__title--menu {

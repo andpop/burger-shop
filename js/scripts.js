@@ -327,14 +327,13 @@ btnOrder.on('submit', e => {
     const popup = createOrderPopup(msg);
     document.body.appendChild(popup);
     document.body.style.overflow = 'hidden';
+    $('.wrapper').toggleClass('disableOPS');
   }).fail(function(jqXHR, textStatus) {
     const popup = createOrderPopup(`Ошибка при формировании заказа. <br> Статус: ${textStatus}`);
     document.body.appendChild(popup);
     document.body.style.overflow = 'hidden';
     $('.wrapper').toggleClass('disableOPS');
 });
-
-  // let   message = 'Заказ отправлен. Менеджер свяжется с Вами в ближайшее время';
 
   function createOrderPopup(message) {
     //Создаем новый popup
