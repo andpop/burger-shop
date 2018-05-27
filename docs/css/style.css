@@ -443,7 +443,6 @@ body {
 
 .maincontent {
   height: 100%;
-  min-height: 640px;
   -webkit-transition: 0.8s;
   -o-transition: 0.8s;
   transition: 0.8s; }
@@ -483,14 +482,25 @@ body {
   .section__title--hero {
     font-size: 3.9375rem; } }
 
+@media screen and (max-width: 380px) {
+  .section__title--hero {
+    font-size: 3.375rem; } }
+
 @media screen and (max-width: 480px) {
   .section__title--about, .section__title--menu, .section__title--order {
     font-size: 3.125rem; } }
 
 .section__title--burgers {
   color: #fff;
-  line-height: 63.93px;
+  line-height: 3.99562rem;
   margin-bottom: 1.875rem; }
+  @media screen and (max-width: 480px) {
+    .section__title--burgers {
+      margin-bottom: 0.625rem;
+      font-size: 4rem; } }
+  @media screen and (max-width: 380px) {
+    .section__title--burgers {
+      line-height: 3.125rem; } }
 
 .section__title--menu {
   color: #fff;
@@ -568,6 +578,9 @@ body {
   @media screen and (max-width: 480px) {
     .hero__big-burger-img {
       max-width: 330px; } }
+  @media screen and (max-width: 380px) {
+    .hero__big-burger-img {
+      max-width: 250px; } }
 
 .nav {
   margin-right: 0.6875rem; }
@@ -611,6 +624,11 @@ body {
   -webkit-transition: .5s;
   -o-transition: .5s;
   transition: .5s; }
+
+.btn--popup {
+  background-color: #e45028; }
+  .btn--popup:hover {
+    background-color: #ce401a; }
 
 .hamburger-menu-link {
   vertical-align: middle;
@@ -815,6 +833,9 @@ body {
   @media screen and (max-width: 480px) {
     .slogan__text {
       font-size: 3.375rem; } }
+  @media screen and (max-width: 380px) {
+    .slogan__text {
+      font-size: 2.75rem; } }
 
 .slogan__description {
   -webkit-box-orient: vertical;
@@ -983,8 +1004,7 @@ body {
   justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
-  position: relative; }
+  align-items: center; }
   @media screen and (max-width: 768px) {
     .burger {
       -webkit-box-orient: vertical;
@@ -993,10 +1013,11 @@ body {
       flex-direction: column; } }
 
 .burger__picture {
-  width: 50%; }
+  width: 50%;
+  text-align: center; }
   @media screen and (max-width: 768px) {
     .burger__picture {
-      width: 80%; } }
+      width: 90%; } }
   @media screen and (max-width: 480px) {
     .burger__picture {
       width: 90%; } }
@@ -1019,6 +1040,9 @@ body {
   font-weight: 300;
   line-height: 1.49812rem;
   margin-bottom: 2.25rem; }
+  @media screen and (max-width: 380px) {
+    .burger__text {
+      line-height: 0.9375rem; } }
 
 .burger__price {
   display: inline-block;
@@ -1029,6 +1053,12 @@ body {
   line-height: 1.755rem;
   letter-spacing: -1.79px;
   margin-right: 1.875rem; }
+  @media screen and (max-width: 480px) {
+    .burger__price {
+      margin-right: 0.625rem; } }
+  @media screen and (max-width: 380px) {
+    .burger__price {
+      font-size: 3.625rem; } }
 
 .burger__currency {
   font-size: 1.875rem;
@@ -1044,10 +1074,10 @@ body {
   background-color: transparent;
   background-color: rgba(228, 80, 40, 0.4);
   position: absolute;
-  top: -80px;
+  top: 10%;
   left: 0;
-  width: 90px;
-  height: 90px;
+  width: 5.625rem;
+  height: 5.625rem;
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
@@ -1059,11 +1089,7 @@ body {
     padding: 15px 20px; }
   @media screen and (max-width: 768px) {
     .burger__composition {
-      top: -50px; } }
-  @media screen and (max-width: 480px) {
-    .burger__composition {
-      top: -70px;
-      left: 0; } }
+      top: 0; } }
 
 .burger__ingredients {
   color: #ffffff;
@@ -1080,7 +1106,7 @@ body {
   background-color: rgba(255, 255, 255, 0.9);
   position: absolute;
   top: 0px;
-  left: 90px;
+  left: 5.625rem;
   width: 0;
   color: #2f3234;
   font-size: 0.875rem;
@@ -1136,20 +1162,21 @@ body {
   line-height: 1.875rem;
   text-transform: uppercase;
   background: url("../img/burgers/kkal.svg") no-repeat;
+  background-size: cover;
   position: absolute;
-  bottom: -30px;
-  width: 62px;
-  height: 62px;
-  padding-top: 26px;
+  bottom: 20%;
+  width: 3.875rem;
+  height: 3.875rem;
+  padding-top: 1.625rem;
   text-align: center; }
   @media screen and (max-width: 768px) {
     .burger__calories {
       right: 0;
-      top: -50px; } }
+      top: 0; } }
   @media screen and (max-width: 480px) {
     .burger__calories {
-      top: -70px;
-      right: 0; } }
+      right: 0;
+      top: 0; } }
 
 .burger__calories-unit {
   font-size: 0.875rem; }
@@ -1179,6 +1206,7 @@ body {
   background-size: cover; }
 
 .comments__brief {
+  color: #ffffff;
   height: 100%;
   padding: 3.125rem 1.875rem 1.875rem 1.25rem;
   opacity: 0; }
@@ -1194,7 +1222,6 @@ body {
     opacity: 1; }
 
 .comments__name {
-  color: #ffffff;
   font-family: Gagalin;
   font-size: 0.875rem;
   font-weight: 400;
@@ -1210,18 +1237,22 @@ body {
       margin-top: 15px; } }
 
 .comments__name--full {
-  color: #2f3234; }
+  color: #2f3234;
+  font-size: 0.9375rem; }
+
+@media screen and (max-width: 480px) {
+  .comments__content {
+    display: none; } }
+
+.comments__content--full {
+  display: block; }
 
 .comments__text {
-  color: #ffffff;
   font-family: Ubuntu;
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.5rem;
   margin-bottom: 0.9375rem; }
-  @media screen and (max-width: 480px) {
-    .comments__text {
-      display: none; } }
 
 .comments__text--full {
   display: block;
@@ -1502,7 +1533,10 @@ body {
   background: rgba(47, 50, 52, 0.93);
   width: 0;
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s; }
 
 .menu-acco__close {
   display: none;
@@ -1655,8 +1689,9 @@ body {
   cursor: pointer;
   color: #fff; }
 
-.contacts {
-  background: url("../img/contacts/map-bg.png") center center/cover no-repeat; }
+.map {
+  width: 100%;
+  height: 100%; }
 
 .footer {
   position: absolute;
@@ -1748,14 +1783,16 @@ body {
   .socials__item:hover {
     opacity: 1; }
 
+.popup-template {
+  display: none; }
+
 .popup {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: #000;
-  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.8);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1768,7 +1805,8 @@ body {
   z-index: 10000; }
 
 .popup__container {
-  position: relative; }
+  position: relative;
+  color: #2f3234; }
 
 .popup__content {
   width: 460px;
@@ -1780,6 +1818,9 @@ body {
     .popup__content {
       width: 250px; } }
 
+.popup__content--center {
+  text-align: center; }
+
 .popup__close {
   position: absolute;
   right: 15px;
@@ -1787,5 +1828,8 @@ body {
   width: 20px;
   height: 20px;
   text-decoration: none; }
+
+.popup__message {
+  margin-bottom: 1.25rem; }
 
 /*# sourceMappingURL=style.css.map */

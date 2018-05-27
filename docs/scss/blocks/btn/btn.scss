@@ -11,3 +11,10 @@
   text-decoration: none;
   transition     : .5s;
 }
+
+.btn--popup {
+  background-color: $orange;
+  &:hover {
+    background-color: darken($orange, 7%);
+  }
+}

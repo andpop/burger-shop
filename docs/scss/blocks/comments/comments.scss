@@ -33,6 +33,7 @@
 // }
 
 .comments__brief {
+  color  : #ffffff;
   height : 100%;
   padding: rem(50px) rem(30px) rem(30px) rem(20px);
   opacity: 0;
@@ -48,8 +49,8 @@
   }
 }
 
+
 .comments__name {
-  color        : #ffffff;
   font-family  : Gagalin;
   font-size    : rem(14px);
   font-weight  : 400;
@@ -66,20 +67,27 @@
 }
 
 .comments__name--full {
-  color: $dark;
+  color    : $dark;
+  font-size: rem(15px);
+}
+
+.comments__content {
+  @include phones {
+    display: none;
+  }
+}
+
+.comments__content--full {
+  display: block;
 }
 
 
 .comments__text {
-  color        : #ffffff;
   font-family  : Ubuntu;
   font-size    : rem(14px);
   font-weight  : 300;
   line-height  : rem(24px);
   margin-bottom: rem(15px);
-  @include phones {
-    display: none;
-  }
 }
 
 .comments__text--full {

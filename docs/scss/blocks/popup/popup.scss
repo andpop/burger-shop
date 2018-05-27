@@ -1,19 +1,23 @@
+.popup-template {
+  display: none;
+}
+
 .popup {
-  position       : fixed;
-  top            : 0;
-  left           : 0;
-  right          : 0;
-  bottom         : 0;
-  background     : #000;
-  opacity        : 0.8;
-  display        : flex;
-  justify-content: center;
-  align-items    : center;
-  z-index        : 10000;
+  position        : fixed;
+  top             : 0;
+  left            : 0;
+  right           : 0;
+  bottom          : 0;
+  background-color: rgba(0,0,0,0.8);
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  z-index         : 10000;
 }
 
 .popup__container {
   position: relative;
+  color   : $dark;
 }
 
 .popup__content {
@@ -27,6 +31,10 @@
   }
 }
 
+.popup__content--center {
+  text-align: center;
+}
+
 .popup__close {
   position: absolute;
   right   : 15px;
@@ -35,4 +43,8 @@
   height  : 20px;
   // text-align     : center;
   text-decoration: none;
+}
+
+.popup__message {
+  margin-bottom: rem(20px);
 }

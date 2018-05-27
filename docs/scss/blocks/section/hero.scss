@@ -49,4 +49,8 @@
   @include phones {
     max-width: 330px;
   }
+  @include phones--small {
+    max-width: 250px;
+  }
+  
 }
