@@ -795,41 +795,41 @@
                 <div class="container order__container">
                   <h2 class="section__title section__title--order">Закажите доставку</h2>
               
-                  <form action="process-order.php" method="POST" class="form">
-                  <!-- <form action="https://andpop.ru/process-order.php" method="POST" class="form"> -->
+                  <!-- <form action="process-order.php" method="POST" class="form"> -->
+                  <form action="http://andpop.ru/process-order.php" method="POST" class="form">
                     <div class="form__column">
                       <div class="form__row">
                         <label class="form__block">
                           <span class="form__title">Имя</span>
-                          <input type="text" class="form__input" name="name">
+                          <input type="text" class="form__input" name="name" maxlength="30" required>
                         </label>
                         <label class="form__block">
                           <span class="form__title">Телефон</span>
-                          <input type="text" class="form__input" name="tel">
+                          <input type="tel" class="form__input" name="tel" maxlength="12" required>
                         </label>
                       </div>
                       <div class="form__row">
                         <label class="form__block">
                           <span class="form__title">Улица</span>
-                          <input type="text" class="form__input" name="street">
+                          <input type="text" class="form__input" name="street" maxlength="30">
                         </label>
                       </div>
                       <div class="form__row">
                         <label class="form__block">
                           <span class="form__title">Дом</span>
-                          <input type="text" class="form__input" name="house">
+                          <input type="text" class="form__input" name="house" maxlength="6">
                         </label>
                         <label class="form__block">
                           <span class="form__title">Корпус</span>
-                          <input type="text" class="form__input" name="block">
+                          <input type="text" class="form__input" name="block" maxlength="4">
                         </label>
                         <label class="form__block form__block--flat">
                           <span class="form__title">Квартира</span>
-                          <input type="text" class="form__input" name="flat">
+                          <input type="number" class="form__input" name="flat" maxlength="5">
                         </label>
                         <label class="form__block form__block--floor">
                           <span class="form__title">Этаж</span>
-                          <input type="text" class="form__input" name="floor">
+                          <input type="number" class="form__input" name="floor" maxlength="2">
                         </label>
                       </div>
                     </div>  

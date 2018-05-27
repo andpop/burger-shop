@@ -1215,7 +1215,15 @@ body {
       margin-top: 15px; } }
 
 .comments__name--full {
-  color: #2f3234; }
+  color: #2f3234;
+  font-size: 0.9375rem; }
+
+@media screen and (max-width: 480px) {
+  .comments__content {
+    display: none; } }
+
+.comments__content--full {
+  display: block; }
 
 .comments__text {
   font-family: Ubuntu;
@@ -1223,9 +1231,6 @@ body {
   font-weight: 300;
   line-height: 1.5rem;
   margin-bottom: 0.9375rem; }
-  @media screen and (max-width: 480px) {
-    .comments__text {
-      display: none; } }
 
 .comments__text--full {
   display: block;

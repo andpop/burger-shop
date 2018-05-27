@@ -1,4 +1,8 @@
 <?php
+header('Content-type: text/html');
+header('Access-Control-Allow-Origin: *');
+// Без этих заголовков скрипт на хостинге не загружается!
+
 $outMessage = '';
 
 // Имя и телефон должны быть указаны обязательно
@@ -19,7 +23,8 @@ if ($isError) {
 // var_dump($_POST);
 // die();
 
-$to = 'andrey@localhost'; 
+// $to = 'andrey@localhost'; // Режим тестирования - шлем на локальный адрес
+$to = 'andpop@mail.ru'; 
 $subject = 'Заказ бургера'; 
 
 $name = '<b>'.$_POST['name'].'</b>';
@@ -64,6 +69,6 @@ $message = '
   </html>'; 
 $headers  = "Content-type: text/html; charset=utf-8 \r\n"; 
 $headers .= "From: Отправитель <andrvpopov@gmail.com>\r\n"; 
-// mail($to, $subject, $message, $headers); 
+mail($to, $subject, $message, $headers); 
 echo 'Заказ отправлен. Менеджер свяжется с Вами в ближайшее время';
-echo $message;
+// echo $message; // Режим тестирования - выводим сформированное сообщение

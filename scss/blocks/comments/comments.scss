@@ -67,7 +67,18 @@
 }
 
 .comments__name--full {
-  color: $dark;
+  color    : $dark;
+  font-size: rem(15px);
+}
+
+.comments__content {
+  @include phones {
+    display: none;
+  }
+}
+
+.comments__content--full {
+  display: block;
 }
 
 
@@ -77,9 +88,6 @@
   font-weight  : 300;
   line-height  : rem(24px);
   margin-bottom: rem(15px);
-  @include phones {
-    display: none;
-  }
 }
 
 .comments__text--full {

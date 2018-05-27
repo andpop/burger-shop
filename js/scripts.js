@@ -294,8 +294,10 @@ $('[data-scroll-to]').on('click', e => {
 if (isMobile) {
   $(document).swipe({
     swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-      const swipeDirection = direction == 'up' ? 'down' : 'up';
-      scrollSection(swipeDirection);  
+      if ((direction == 'up') || (direction == 'down')) {
+        const swipeDirection = direction;
+        scrollSection(swipeDirection);  
+      };
     }
   });
 };
