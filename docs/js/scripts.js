@@ -1,4 +1,8 @@
+// Состав бургера
 
+$('.burger__composition').on('click', e => {
+  e.preventDefault();
+});
 
 // ============ Полноэкранное гамбургер-меню ============================================
 var hamburgermenuLink      = document.querySelector('.hamburger-menu-link');
