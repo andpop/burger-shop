@@ -295,7 +295,7 @@ if (isMobile) {
   $(document).swipe({
     swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
       if ((direction == 'up') || (direction == 'down')) {
-        const swipeDirection = direction;
+        const swipeDirection = direction == 'up' ? 'down' : 'up';
         scrollSection(swipeDirection);  
       };
     }
