@@ -1,12 +1,12 @@
 .about {
-  background-image   : url("./../img/about/about-bg.png");
+  background-image   : url("./../img/about/about-bg.jpg");
   background-repeat  : no-repeat;
   background-position: center bottom;
   background-size    : cover;
   position           : relative;
-  @include tablets {
-    background-image: url("./../img/about/about-bg-768.png");
-  }
+  // @include tablets {
+  //   background-image: url("./../img/about/about-bg-768.png");
+  // }
 }
 
 
