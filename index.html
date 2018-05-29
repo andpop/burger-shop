@@ -795,7 +795,7 @@
                 <div class="container order__container">
                   <h2 class="section__title section__title--order">Закажите доставку</h2>
               
-                  <!-- <form action="process-order.php" method="POST" class="form"> -->
+                  <!-- <form action="process-order.php" method="POST" class="form" id="form-order"> -->
                   <form action="https://andpop.ru/process-order.php" method="POST" class="form">
                     <div class="form__column">
                       <div class="form__row">
@@ -805,19 +805,19 @@
                         </label>
                         <label class="form__block">
                           <span class="form__title">Телефон</span>
-                          <input type="tel" class="form__input" name="tel" maxlength="12" required>
+                          <input type="tel" class="form__input" name="tel" id="tel-order" maxlength="12" required>
                         </label>
                       </div>
                       <div class="form__row">
                         <label class="form__block">
                           <span class="form__title">Улица</span>
-                          <input type="text" class="form__input" name="street" maxlength="30">
+                          <input type="text" class="form__input" name="street" maxlength="30" required>
                         </label>
                       </div>
                       <div class="form__row">
                         <label class="form__block">
                           <span class="form__title">Дом</span>
-                          <input type="text" class="form__input" name="house" maxlength="6">
+                          <input type="text" class="form__input" name="house" maxlength="6" required>
                         </label>
                         <label class="form__block">
                           <span class="form__title">Корпус</span>

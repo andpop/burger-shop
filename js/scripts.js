@@ -320,8 +320,35 @@ if (isMobile) {
 
 
 //============================= Обработка формы заказа ===============================
-const btnOrder = $('.form');
-btnOrder.on('submit', e => {
+
+// Крссбраузерная функция определения нажатого символа
+// event.type должен быть keypress
+function getChar(event) {
+  if (event.which == null) { // IE
+    if (event.keyCode < 32) return null; // спец. символ
+    return String.fromCharCode(event.keyCode)
+  }
+  if (event.which != 0 && event.charCode != 0) { // все кроме IE
+    if (event.which < 32) return null; // спец. символ
+    return String.fromCharCode(event.which); // остальные
+  }
+  return null; // спец. символ
+}
+
+
+const formOrder = $('#form-order');
+const telOrder  = $('#tel-order');
+
+// В поле "Телефон" нельзя вводить буквы
+telOrder.on('keypress', e => {
+  const inputChar = getChar(e),
+        pattern   = /[a-zA-Zа-яА-Я]/;
+
+  if (pattern.test(inputChar)) e.preventDefault();  
+});
+
+// Обработка отправки формы
+formOrder.on('submit', e => {
   e.preventDefault();
   // console.log("Form submitting...")
 
@@ -334,13 +361,21 @@ btnOrder.on('submit', e => {
         typeXHR = form.attr('method');
 
   const ajax = $.ajax({
-    type: typeXHR,
-    url : urlXHR,
-    data: dataXHR,
+    type    : typeXHR,
+    url     : urlXHR,
+    dataType: 'JSON',
+    data    : dataXHR,
   });
 
   ajax.done( msg => {
-    const popup = createOrderPopup(msg);
+    let status  = msg.status,
+        message = msg.message;
+    if (status == "OK") {
+      // Очищаем поля формы
+      $('#form-order')[0].reset();
+    };
+
+    const popup = createOrderPopup(message);
     document.body.appendChild(popup);
     document.body.style.overflow = 'hidden';
     $('.wrapper').toggleClass('disableOPS');

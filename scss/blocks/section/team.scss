@@ -38,6 +38,9 @@
 
 .team-acco__item {
   margin-bottom: rem(40px);
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .team-acco__item--active {
@@ -63,6 +66,7 @@
   font-size      : rem(14px);
   font-weight    : 400;
   margin-bottom  : rem(17px);
+  user-select    : none;
   @include tablets {
     font-size      : rem(24px);
     justify-content: center;

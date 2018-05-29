@@ -4,8 +4,9 @@ header('Access-Control-Allow-Origin: *');
 // Без этих заголовков скрипт на хостинге не загружается!
 
 $outMessage = '';
+$data = [];
 
-// Имя и телефон должны быть указаны обязательно
+// Проверка обязательных полей
 $isError = false;
 if (empty($_POST['name'])) {
   $isError = true;
@@ -15,16 +16,32 @@ if (empty($_POST['tel'])) {
   $isError = true;
   $outMessage .= 'Не указан телефон.<br>';
 };
-if ($isError) {
-  echo 'Ошибка при обработке заказа: '.$outMessage;
-  die();
-}
+if (empty($_POST['street'])) {
+  $isError = true;
+  $outMessage .= 'Не указана улица.<br>';
+};
+if (empty($_POST['house'])) {
+  $isError = true;
+  $outMessage .= 'Не указан дом.<br>';
+};
+if (empty($_POST['payment'])) {
+  $isError = true;
+  $outMessage .= 'Не выбран способ оплаты.<br>';
+};
 
 // var_dump($_POST);
 // die();
 
-// $to = 'andrey@localhost'; // Режим тестирования - шлем на локальный адрес
-$to = 'andpop@mail.ru'; 
+if ($isError) {
+  $data['status'] = 'VALIDATE_ERROR';
+  $data['message'] = '<b>Вы не заполнили необходимые поля:</b> <br>'.$outMessage;
+  echo json_encode($data);
+  die();
+}
+
+
+$to = 'andrey@localhost'; // Режим тестирования - шлем на локальный адрес
+// $to = 'andpop@mail.ru'; 
 $subject = 'Заказ бургера'; 
 
 $name = '<b>'.$_POST['name'].'</b>';
@@ -69,6 +86,13 @@ $message = '
   </html>'; 
 $headers  = "Content-type: text/html; charset=utf-8 \r\n"; 
 $headers .= "From: Отправитель <andrvpopov@gmail.com>\r\n"; 
-mail($to, $subject, $message, $headers); 
-echo 'Заказ отправлен. Менеджер свяжется с Вами в ближайшее время';
+$mail = mail($to, $subject, $message, $headers); 
+if ($mail) {
+  $data['status'] = 'OK';
+  $data['message'] = 'Заказ отправлен. Менеджер свяжется с Вами в ближайшее время';
+} else {
+  $data['status'] = 'SEND_ERROR';
+  $data['message'] = 'При отправке заказа на сервере произошла ошибка. <br>Извините, пожалуйста, и попробуйте отправить форму еще раз';
+};
+echo json_encode($data);
 // echo $message; // Режим тестирования - выводим сформированное сообщение

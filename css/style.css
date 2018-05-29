@@ -848,7 +848,11 @@ body {
 .arrow-scroll {
   position: absolute;
   bottom: 6%;
-  left: 49%; }
+  left: 49%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 .features__list {
   display: -webkit-box;
@@ -937,12 +941,20 @@ body {
 .slider-scroll__img--prev {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
-  transform: rotate(90deg); }
+  transform: rotate(90deg);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 .slider-scroll__img--next {
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg); }
+  transform: rotate(-90deg);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 .slider__container {
   overflow: hidden;
@@ -1081,6 +1093,13 @@ body {
   .burger__composition:hover .burger__ingredients-list {
     width: 270px;
     padding: 15px 20px; }
+    @media screen and (max-width: 768px) {
+      .burger__composition:hover .burger__ingredients-list {
+        width: 250px; } }
+    @media screen and (max-width: 480px) {
+      .burger__composition:hover .burger__ingredients-list {
+        width: 230px;
+        padding: 10px 15px; } }
   @media screen and (max-width: 768px) {
     .burger__composition {
       top: 0; } }
@@ -1123,6 +1142,12 @@ body {
   width: 50px;
   margin-right: 20px;
   text-align: center; }
+  @media screen and (max-width: 768px) {
+    .burger__ingredients-icon {
+      margin-right: 10px; } }
+  @media screen and (max-width: 480px) {
+    .burger__ingredients-icon {
+      margin-right: 0; } }
 
 .burger__ingredients-meal {
   color: #2f3234;
@@ -1135,6 +1160,12 @@ body {
   width: 60px;
   margin-right: 50px;
   text-align: left; }
+  @media screen and (max-width: 768px) {
+    .burger__ingredients-meal {
+      margin-right: 20px; } }
+  @media screen and (max-width: 480px) {
+    .burger__ingredients-meal {
+      margin-right: 5px; } }
 
 .burger__ingredients-weight {
   display: inline-block;
@@ -1367,6 +1398,8 @@ body {
 
 .team-acco__item {
   margin-bottom: 2.5rem; }
+  .team-acco__item:last-child {
+    margin-bottom: 0; }
 
 .team-acco__item--active .team-acco__trigger {
   color: #f9b43b; }
@@ -1391,7 +1424,11 @@ body {
   font-family: Gagalin;
   font-size: 0.875rem;
   font-weight: 400;
-  margin-bottom: 1.0625rem; }
+  margin-bottom: 1.0625rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
   @media screen and (max-width: 768px) {
     .team-acco__trigger {
       font-size: 1.5rem;
