@@ -519,14 +519,11 @@ body {
   text-align: center; }
 
 .hero {
-  background-image: url("./../img/main/bg-texture.png");
+  background-image: url("./../img/main/bg-texture.jpg");
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: cover;
   position: relative; }
-  @media screen and (max-width: 768px) {
-    .hero {
-      background-image: url("./../img/main/bg-texture-768.png"); } }
 
 .hero__container {
   -webkit-box-pack: center;
@@ -734,14 +731,11 @@ body {
     text-decoration: underline; }
 
 .about {
-  background-image: url("./../img/about/about-bg.png");
+  background-image: url("./../img/about/about-bg.jpg");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
   position: relative; }
-  @media screen and (max-width: 768px) {
-    .about {
-      background-image: url("./../img/about/about-bg-768.png"); } }
 
 .section__title--about {
   color: #2f3234;
@@ -1326,9 +1320,6 @@ body {
 .team {
   background: url("../img/team/team-bg.jpg") center center/cover no-repeat;
   position: relative; }
-  @media screen and (max-width: 768px) {
-    .team {
-      background: url("../img/team/team-bg-768.png") center center/cover no-repeat; } }
 
 .team__container {
   position: absolute;
@@ -1562,7 +1553,7 @@ body {
   display: none; }
 
 .order {
-  background: url("../img/order/order-bg.png") center center/cover no-repeat;
+  background: url("../img/order/order-bg.jpg") center center/cover no-repeat;
   color: #ffffff; }
 
 .order__container {
