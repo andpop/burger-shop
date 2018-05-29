@@ -149,6 +149,18 @@ function createCommentPopup(activeComment) {
     document.body.style.overflow = '';
     $('.wrapper').toggleClass('disableOPS');
   });
+
+  $(document).on('keydown', e => {
+    const escCode = 27;
+    if (e.keyCode == escCode) {
+      if ($(document.body).has(popupElement).length > 0) {
+        document.body.removeChild(popupElement);
+        document.body.style.overflow = '';
+        $('.wrapper').toggleClass('disableOPS');
+      }
+    };
+  });
+  
   
   return popupElement;
 }
@@ -311,7 +323,7 @@ if (isMobile) {
 const btnOrder = $('.form');
 btnOrder.on('submit', e => {
   e.preventDefault();
-  console.log("Form submitting...")
+  // console.log("Form submitting...")
 
   // AJAX-запрос
 
@@ -368,6 +380,19 @@ btnOrder.on('submit', e => {
       document.body.style.overflow = '';
       $('.wrapper').toggleClass('disableOPS');
     });
+
+    // Нажатие ESC - закрыть popup
+    $(document).on('keydown', e => {
+      const escCode = 27;
+      if (e.keyCode == escCode) {
+        if ($(document.body).has(popupElement).length > 0) {
+          document.body.removeChild(popupElement);
+          document.body.style.overflow = '';
+          $('.wrapper').toggleClass('disableOPS');
+        }
+      };
+    });
+  
     return popupElement;
   }
 
@@ -432,3 +457,7 @@ function init () {
   // myMap.geoObjects.add(placemark);
 };
 
+
+// $('popup__container').on('keyup', e => {
+//   console.log(e.keyCode);
+// });
