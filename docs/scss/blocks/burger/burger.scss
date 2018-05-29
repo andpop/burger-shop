@@ -95,6 +95,14 @@
   &:hover .burger__ingredients-list {
     width  : 270px;
     padding: 15px 20px;
+    @include tablets {
+      width: 250px;
+    }
+    @include phones {
+      width  : 230px;
+      padding: 10px 15px;
+    }
+  
   }
 
   @include tablets {
@@ -146,6 +154,12 @@
   width         : 50px;
   margin-right  : 20px;
   text-align    : center;
+  @include tablets {
+    margin-right: 10px;
+  }
+  @include phones {
+    margin-right: 0;
+  }
 }
 
 .burger__ingredients-meal {
@@ -159,6 +173,13 @@
   width         : 60px;
   margin-right  : 50px;
   text-align    : left;
+  @include tablets {
+    margin-right: 20px;
+  }
+  @include phones {
+    margin-right: 5px;
+  }
+
 }
 
 .burger__ingredients-weight {
