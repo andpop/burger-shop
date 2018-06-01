@@ -1,9 +1,9 @@
 .team {
   background: url('../img/team/team-bg.jpg') center center /cover no-repeat;
   position  : relative;
-  @include tablets {
-    background: url('../img/team/team-bg-768.png') center center /cover no-repeat;
-  }
+  // @include tablets {
+  //   background: url('../img/team/team-bg-768.png') center center /cover no-repeat;
+  // }
 }
 
 .team__container {
@@ -38,6 +38,9 @@
 
 .team-acco__item {
   margin-bottom: rem(40px);
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .team-acco__item--active {
@@ -63,6 +66,7 @@
   font-size      : rem(14px);
   font-weight    : 400;
   margin-bottom  : rem(17px);
+  user-select    : none;
   @include tablets {
     font-size      : rem(24px);
     justify-content: center;

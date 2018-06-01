@@ -1,16 +1,12 @@
 .hero {
-  background-image   : url("./../img/main/bg-texture.png");
+  background-image   : url("./../img/main/bg-texture.jpg");
   background-repeat  : no-repeat;
   background-position: 50%;
   background-size    : cover;
   position           : relative;
-  @include tablets {
-    background-image: url("./../img/main/bg-texture-768.png");
-  }
 }
 
 .hero__container {
-  // justify-content: flex-start;
   justify-content: center;
 }
 
@@ -20,7 +16,6 @@
   flex-grow     : 1;
   align-items   : center;
   padding-left  : 3%;
-  // outline       : 1px solid wheat;
   @include tablets {
     width          : 100%;
     flex-direction : column;
@@ -49,4 +44,8 @@
   @include phones {
     max-width: 330px;
   }
+  @include phones--small {
+    max-width: 250px;
+  }
+  
 }

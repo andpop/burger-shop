@@ -1,4 +1,8 @@
+// Состав бургера
 
+$('.burger__composition').on('click', e => {
+  e.preventDefault();
+});
 
 // ============ Полноэкранное гамбургер-меню ============================================
 var hamburgermenuLink      = document.querySelector('.hamburger-menu-link');
@@ -10,18 +14,21 @@ hamburgermenuLink.addEventListener('click', event => {
   event.preventDefault();
   hamburgermenuContent.style.display = 'flex';
   document.body.style.overflow       = 'hidden';
+  $('.wrapper').toggleClass('disableOPS');
 });
 
 hamburgermenuClose.addEventListener('click', event => {
   event.preventDefault();
   hamburgermenuContent.style.display = '';
   document.body.style.overflow       = '';
+  $('.wrapper').toggleClass('disableOPS');
 });
 
 for (let i = 0; i<hamburgermenuItemLinks.length; i++) {
   hamburgermenuItemLinks[i].addEventListener('click', event => {
     hamburgermenuContent.style.display = '';
     document.body.style.overflow       = '';
+    $('.wrapper').toggleClass('disableOPS');
   })
 };
 
@@ -93,54 +100,68 @@ for (let i = 0; i<menuAccoItems.length; i++) {
 const commentButtonList = document.querySelectorAll(".comments__btn");
 
 for (let commentButton of commentButtonList) {
-  commentButton.addEventListener("click", function(event) {
+  commentButton.addEventListener("click", event => {
     event.preventDefault();
-    const full_comment = getFullCommentHTML(this);
-    const successPopup = createPopup(full_comment);
-    document.body.appendChild(successPopup);
+
+    // Находим активный отзыв, к которому относится нажатая кнопка
+    const activeComment = event.target.closest(".comments__brief");
+
+    // Создаем новый popup, данные будут взяты из активного отзыва
+    const popup = createCommentPopup(activeComment);
+    document.body.appendChild(popup);
     document.body.style.overflow = 'hidden';
+    $('.wrapper').toggleClass('disableOPS');
 });
 }
 
-function getFullCommentHTML(commentButton) {
-  let fullComment        = 'Полного комментария нет';
-  let fullCommentElement = commentButton.nextElementSibling;
-  if (!commentButton.classList.contains('comments__btn--mobile')) 
-    fullCommentElement = commentButton.nextElementSibling.nextElementSibling;
-  if (fullCommentElement) {
-    if (fullCommentElement.classList.contains('full_commentContent')) {
-      fullComment = fullCommentElement.innerHTML;
-    }
-  }
-  return fullComment;
-};
+function createCommentPopup(activeComment) {
+  //Выделяем автора и текст активного отзыва
+  const authorElementFromHTML  = activeComment.children[0],
+        contentElementFromHTML = activeComment.children[1];
 
-function createPopup(content) {
-  const popupElement = document.createElement("div");
+  //Создаем новый popup
+  const popupElement  = document.createElement("div"),
+        popupTemplate = document.querySelector("#popup-comment-template");
+  
   popupElement.classList.add("popup");
+  popupElement.innerHTML = popupTemplate.innerHTML;
+  
+  const authorElement  = popupElement.querySelector(".comments__name"),
+        contentElement = popupElement.querySelector(".comments__content");
+  
+  authorElement.innerHTML  = authorElementFromHTML.innerHTML;
+  contentElement.innerHTML = contentElementFromHTML.innerHTML;
+
   // Щелчок вне сообщения - закрыть popup
   popupElement.addEventListener("click", event => {
     if (event.target.classList.contains('popup')) {
       document.body.removeChild(popupElement);
       document.body.style.overflow = '';
+      $('.wrapper').toggleClass('disableOPS');
     };
   });
 
-  const popup                  = document.querySelector("#popupTemplate");
-        popupElement.innerHTML = popup.innerHTML;
-
-  const closeElement = popupElement.querySelector(".popup__close");
   // Щелчок на крестике - закрыть popup
+  const closeElement = popupElement.querySelector(".popup__close");
   closeElement.addEventListener("click", event => {
     event.preventDefault();
     document.body.removeChild(popupElement);
     document.body.style.overflow = '';
+    $('.wrapper').toggleClass('disableOPS');
+  });
+
+  $(document).on('keydown', e => {
+    const escCode = 27;
+    if (e.keyCode == escCode) {
+      if ($(document.body).has(popupElement).length > 0) {
+        document.body.removeChild(popupElement);
+        document.body.style.overflow = '';
+        $('.wrapper').toggleClass('disableOPS');
+      }
+    };
   });
   
-  const contentElement = popupElement.querySelector(".popup__content");
   
-  contentElement.innerHTML = content;
-
   return popupElement;
 }
 
@@ -204,6 +225,7 @@ const performTransition = sectionNomer => {
   const shiftProcent = `${-sectionNomer*100 }%`;
 
   if (sectionNomer < 0) return;
+  if ($('.wrapper').hasClass('disableOPS')) return;
   
   if (!inScroll) {
     inScroll = true;
@@ -288,8 +310,189 @@ $('[data-scroll-to]').on('click', e => {
 if (isMobile) {
   $(document).swipe({
     swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-      const swipeDirection = direction == 'up' ? 'down' : 'up';
-      scrollSection(swipeDirection);  
+      if ((direction == 'up') || (direction == 'down')) {
+        const swipeDirection = direction == 'up' ? 'down' : 'up';
+        scrollSection(swipeDirection);  
+      };
     }
   });
 };
+
+
+//============================= Обработка формы заказа ===============================
+
+// Крссбраузерная функция определения нажатого символа
+// event.type должен быть keypress
+function getChar(event) {
+  if (event.which == null) { // IE
+    if (event.keyCode < 32) return null; // спец. символ
+    return String.fromCharCode(event.keyCode)
+  }
+  if (event.which != 0 && event.charCode != 0) { // все кроме IE
+    if (event.which < 32) return null; // спец. символ
+    return String.fromCharCode(event.which); // остальные
+  }
+  return null; // спец. символ
+}
+
+
+const formOrder = $('#form-order');
+const telOrder  = $('#tel-order');
+
+// В поле "Телефон" нельзя вводить буквы
+telOrder.on('keypress', e => {
+  const inputChar = getChar(e),
+        pattern   = /[a-zA-Zа-яА-Я]/;
+
+  if (pattern.test(inputChar)) e.preventDefault();  
+});
+
+// Обработка отправки формы
+formOrder.on('submit', e => {
+  e.preventDefault();
+  // console.log("Form submitting...")
+
+  // AJAX-запрос
+
+  var   message = '';
+  const form    = $(e.target),
+        dataXHR = form.serialize(),
+        urlXHR  = form.attr('action'),
+        typeXHR = form.attr('method');
+
+  const ajax = $.ajax({
+    type    : typeXHR,
+    url     : urlXHR,
+    dataType: 'JSON',
+    data    : dataXHR,
+  });
+
+  ajax.done( msg => {
+    let status  = msg.status,
+        message = msg.message;
+    if (status == "OK") {
+      // Очищаем поля формы
+      $('#form-order')[0].reset();
+    };
+
+    const popup = createOrderPopup(message);
+    document.body.appendChild(popup);
+    document.body.style.overflow = 'hidden';
+    $('.wrapper').toggleClass('disableOPS');
+  }).fail(function(jqXHR, textStatus) {
+    const popup = createOrderPopup(`Ошибка при формировании заказа. <br> Статус: ${textStatus}`);
+    document.body.appendChild(popup);
+    document.body.style.overflow = 'hidden';
+    $('.wrapper').toggleClass('disableOPS');
+});
+
+  function createOrderPopup(message) {
+    //Создаем новый popup
+    const popupElement  = document.createElement("div"),
+          popupTemplate = document.querySelector("#popup-form-template");
+    
+    popupElement.classList.add("popup");
+    popupElement.innerHTML = popupTemplate.innerHTML;
+    
+    const messageElement = popupElement.querySelector(".popup__message");
+    
+    messageElement.innerHTML = message;
+  
+    // Щелчок вне сообщения - закрыть popup
+    popupElement.addEventListener("click", event => {
+      if (event.target.classList.contains('popup')) {
+        document.body.removeChild(popupElement);
+        document.body.style.overflow = '';
+        $('.wrapper').toggleClass('disableOPS');
+      };
+    });
+  
+    // Щелчок на кнопке - закрыть popup
+    const closeElement = popupElement.querySelector(".btn");
+    closeElement.addEventListener("click", event => {
+      event.preventDefault();
+      document.body.removeChild(popupElement);
+      document.body.style.overflow = '';
+      $('.wrapper').toggleClass('disableOPS');
+    });
+
+    // Нажатие ESC - закрыть popup
+    $(document).on('keydown', e => {
+      const escCode = 27;
+      if (e.keyCode == escCode) {
+        if ($(document.body).has(popupElement).length > 0) {
+          document.body.removeChild(popupElement);
+          document.body.style.overflow = '';
+          $('.wrapper').toggleClass('disableOPS');
+        }
+      };
+    });
+  
+    return popupElement;
+  }
+
+});
+
+
+//============================== Карта Яндекс =============================================
+ymaps.ready(init);
+
+var placemarks = [
+  {
+    latitude      : 59.97,
+    longitude     : 30.31,
+    hintContent   : 'ул. Литераторов, д. 19',
+    balloonContent: 'Самые вкусные бургеры! <br> Заходите с 09:00 до 20:00 на ул. Литераторов, д. 19'
+  },
+  {
+    latitude      : 59.94,
+    longitude     : 30.25,
+    hintContent   : 'Малый проспект, д. 64',
+    balloonContent: 'Самые вкусные бургеры! <br> Заходите с 09:00 до 20:00 на Малый проспект, д. 64'
+  },
+  {
+    latitude      : 59.93,
+    longitude     : 30.34,
+    hintContent   : 'наб. реки Фонтанки, д. 56',
+    balloonContent: 'Самые вкусные бургеры! <br> Заходите с 09:00 до 20:00 на наб. реки Фонтанки, д. 56'
+  }
+
+];
+
+function init () {
+  var myMap = new ymaps.Map('map', {
+    center   : [59.94, 30.32],
+    zoom     : 12,
+    behaviors: ['drag']
+  });
+  myMap.controls.add('zoomControl');
+
+  placemarks.forEach(obj => {
+    let placemark = new ymaps.Placemark([obj.latitude, obj.longitude], {
+      hintContent   : obj.hintContent,
+      balloonContent: obj.balloonContent
+    }, {
+      iconImageHref  : './img/contacts/map-marker.svg',
+      iconImageSize  : [46, 57],
+      iconImageOffset: [-26, -52]
+    });
+    myMap.geoObjects.add(placemark);
+  });
+
+
+  // var placemark = new ymaps.Placemark([59.97, 30.31], {
+  //   hintContent   : 'ул. Литераторов, д. 19',
+  //   balloonContent: 'Самые вкусные бургеры! <br> Заходите с 09:00 до 20:00 на ул. Литераторов, д. 19'
+  // }, {
+  //   iconImageHref  : './img/contacts/map-marker.svg',
+  //   iconImageSize  : [46, 57],
+  //   iconImageOffset: [-26, -52]
+  // });
+
+  // myMap.geoObjects.add(placemark);
+};
+
+
+// $('popup__container').on('keyup', e => {
+//   console.log(e.keyCode);
+// });

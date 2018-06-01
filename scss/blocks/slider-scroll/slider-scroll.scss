@@ -1,7 +1,9 @@
 .slider-scroll__img--prev {
-  transform: rotate(90deg);
+  transform  : rotate(90deg);
+  user-select: none;
 }
 
 .slider-scroll__img--next {
-  transform: rotate(-90deg);
+  transform  : rotate(-90deg);
+  user-select: none;
 }
