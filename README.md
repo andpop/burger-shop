@@ -3,4 +3,4 @@
 
 Адаптивный дизайн, Pixel Perfect, верстка на flexbox, постраничный скроллинг, форма для отправки заказов.
 
-Технологии: HTML5, CSS, JavaScript, jQuery
+Технологии: HTML5, Sass, JavaScript, jQuery
